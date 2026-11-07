@@ -44,6 +44,7 @@ jobs:
 
       - name: Descargar indicadores
         env:
+          BCCH_TOKEN: ${{ secrets.BCCH_TOKEN }}
           BCCH_USER: ${{ secrets.BCCH_USER }}
           BCCH_PASS: ${{ secrets.BCCH_PASS }}
           CMF_API_KEY: ${{ secrets.CMF_API_KEY }}

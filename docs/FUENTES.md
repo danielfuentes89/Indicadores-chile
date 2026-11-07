@@ -9,7 +9,7 @@ Leyenda de acceso: **API** = servicio con datos estructurados · **Archivo** = d
 
 | Estado | Fuente | Acceso | Qué aporta |
 |---|---|---|---|
-| ✅ | **Banco Central de Chile – Base de Datos Estadísticos (BDE)** | API REST `SieteRestWS.ashx?function=GetSeries` (Key: cuenta BDE con la API habilitada; la clave vence al año). Una serie por llamada. | Tipo de cambio, UF, UTM, TPM, IPC, Imacec, PIB, desempleo (INE), materias primas, balanza de pagos, expectativas (EEE/EOF), estadísticas regionales. Es la fuente preferida: replica muchas series del INE. |
+| ✅ | **Banco Central de Chile – Base de Datos Estadísticos (BDE)** | API REST `SieteRestWS.ashx?token=…&function=GetSeries` (Key: API Key Token de la cuenta BDE, vence al año; el método antiguo `user`/`pass` sigue disponible). Una serie por llamada. | Tipo de cambio, UF, UTM, TPM, IPC, Imacec, PIB, desempleo (INE), materias primas, balanza de pagos, expectativas (EEE/EOF), estadísticas regionales. Es la fuente preferida: replica muchas series del INE. |
 | ✅ | **CMF – API recursos** (`api.cmfchile.cl/api-sbifv3/recursos_api/…`) | API (Key gratuita) | UF, UTM, dólar, euro, IPC, TMC, TAB. Segunda fuente oficial. |
 | ✅ | **mindicador.cl** | API sin key | Réplica no oficial de indicadores del Banco Central. Solo respaldo. Ojo: su IPC está detenido en dic-2025. |
 | — | **INE** (ine.gob.cl) | Archivo (sin API pública documentada); calendario en la *Agenda Estadística 2026* | IPC desagregado, ENE regional, remuneraciones, IPP, Censo 2024. |

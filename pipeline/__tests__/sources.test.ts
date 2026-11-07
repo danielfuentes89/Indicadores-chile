@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
-import { buildBcchUrl, parseBcch } from '../sources/bcch.ts';
+import { bcch, buildBcchUrl, parseBcch } from '../sources/bcch.ts';
 import { buildCmfUrl, parseChileanNumber, parseCmf } from '../sources/cmf.ts';
 import { parseImf } from '../sources/imf.ts';
 import { parseMindicador, parseMindicadorDate } from '../sources/mindicador.ts';
@@ -15,6 +15,19 @@ describe('Banco Central (BDE)', () => {
     expect(url.searchParams.get('timeseries')).toBe('F073.TCO.PRE.Z.D');
     expect(url.searchParams.get('firstdate')).toBe('2026-01-01');
     expect(url.searchParams.get('user')).toBe('a@b.cl');
+  });
+
+  it('prefiere el API Key Token cuando está configurado', () => {
+    const url = new URL(buildBcchUrl({ BCCH_TOKEN: 'tok', BCCH_USER: 'a@b.cl', BCCH_PASS: 'x' }, 'F073.UFF.PRE.Z.D', '2026-01-01', '2026-01-31'));
+    expect(url.searchParams.get('token')).toBe('tok');
+    expect(url.searchParams.has('user')).toBe(false);
+    expect(url.searchParams.has('pass')).toBe(false);
+  });
+
+  it('acepta token o usuario y clave', () => {
+    expect(bcch.missingConfig({ BCCH_TOKEN: 'tok' })).toBeNull();
+    expect(bcch.missingConfig({ BCCH_USER: 'a', BCCH_PASS: 'b' })).toBeNull();
+    expect(bcch.missingConfig({})).toMatch(/BCCH_TOKEN/);
   });
 
   it('convierte observaciones y descarta valores no disponibles', () => {
