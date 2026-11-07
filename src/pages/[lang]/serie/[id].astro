@@ -1,0 +1,95 @@
+---
+import IndicatorView from '../../../components/IndicatorView.tsx';
+import { LANGS, t, type Lang, type UiKey } from '../../../i18n/ui.ts';
+import Base from '../../../layouts/Base.astro';
+import { getCatalog } from '../../../lib/data.ts';
+import { formatDate, formatDateTime, formatNumber } from '../../../lib/format.ts';
+import { pageUrl, seriesUrl } from '../../../lib/urls.ts';
+
+export async function getStaticPaths() {
+  const catalog = await getCatalog();
+  return LANGS.flatMap((lang) => catalog.indicators.map((i) => ({ params: { lang, id: i.id } })));
+}
+
+const lang = Astro.params.lang as Lang;
+const catalog = await getCatalog();
+const entry = catalog.indicators.find((i) => i.id === Astro.params.id)!;
+const area = catalog.areas.find((a) => a.id === entry.area)!;
+const source = entry.source ? catalog.sources[entry.source] : null;
+const base = import.meta.env.BASE_URL;
+---
+
+<Base lang={lang} title={entry.name[lang]} description={entry.description[lang]} path={`serie/${entry.id}`}>
+  <p class="crumbs small"><a href={pageUrl(lang, `area/${area.id}`)}>{area.name[lang]}</a></p>
+  <h1>{entry.name[lang]}</h1>
+  <p class="lead">{entry.description[lang]}</p>
+
+  {
+    entry.last ? (
+      <p class="headline">
+        <span class="muted small">{t(lang, 'serie.last')}</span>
+        <strong>{formatNumber(entry.last[1], lang, entry.decimals)}</strong>
+        <span class="muted">{entry.unit[lang]} · {formatDate(entry.last[0], entry.frequency, lang)}</span>
+      </p>
+    ) : (
+      <p class="notice">{t(lang, 'card.noData')}. {t(lang, 'card.noDataHint')}</p>
+    )
+  }
+
+  {entry.stale && <p class="notice">⚠ {lang === 'es' ? 'La fuente no ha publicado datos recientes; el último valor disponible podría estar desactualizado.' : 'The source has not published recent data; the latest available value may be outdated.'}</p>}
+  {source && !source.official && <p class="notice">{t(lang, 'serie.fallback')}</p>}
+  {entry.projectionFrom && <p class="notice">{t(lang, 'serie.projectionNote', { year: entry.projectionFrom })}</p>}
+
+  {entry.last && <IndicatorView client:visible entry={entry} lang={lang} base={base} knownIds={catalog.indicators.map((i) => i.id)} />}
+
+  <section class="card meta">
+    <dl>
+      <div><dt>{t(lang, 'serie.unit')}</dt><dd>{entry.unit[lang]}</dd></div>
+      <div><dt>{t(lang, 'serie.frequency')}</dt><dd>{t(lang, `freq.${entry.frequency}` as UiKey)}</dd></div>
+      {source && <div><dt>{t(lang, 'serie.source')}</dt><dd><a href={source.url}>{source.name[lang]}</a></dd></div>}
+      {entry.code && <div><dt>{t(lang, 'serie.code')}</dt><dd><code>{entry.code}</code>{entry.derive === 'yoy' && <span class="muted small"> · {t(lang, 'serie.derived')}</span>}</dd></div>}
+      {entry.updatedAt && <div><dt>{t(lang, 'serie.updated')}</dt><dd>{formatDateTime(entry.updatedAt, lang)}</dd></div>}
+      {source && <div><dt>Licencia / License</dt><dd class="small">{source.license[lang]}</dd></div>}
+    </dl>
+    {entry.last && <p class="small"><a href={seriesUrl(entry.id, base)} download>{t(lang, 'serie.downloadJson')}</a></p>}
+  </section>
+</Base>
+
+<style>
+  .crumbs {
+    margin: 0 0 4px;
+  }
+  .headline {
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+    flex-wrap: wrap;
+    margin: 0 0 16px;
+  }
+  .headline strong {
+    font-size: 2rem;
+    line-height: 1.1;
+  }
+  .notice {
+    margin: 0 0 12px;
+  }
+  .meta {
+    margin-top: 16px;
+  }
+  dl {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px 24px;
+    margin: 0;
+  }
+  dt {
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  dd {
+    margin: 2px 0 0;
+    overflow-wrap: anywhere;
+  }
+</style>

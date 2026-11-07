@@ -1,0 +1,167 @@
+---
+import '../styles/global.css';
+import { t, type Lang } from '../i18n/ui.ts';
+import { pageUrl } from '../lib/urls.ts';
+
+interface Props {
+  lang: Lang;
+  title?: string;
+  description?: string;
+  /** Ruta dentro del idioma (sin prefijo), para el selector de idioma y los enlaces alternos. */
+  path?: string;
+}
+
+const { lang, title, description, path = '' } = Astro.props;
+const other: Lang = lang === 'es' ? 'en' : 'es';
+const siteTitle = t(lang, 'site.title');
+const fullTitle = title ? `${title} · ${siteTitle}` : siteTitle;
+const desc = description ?? t(lang, 'site.tagline');
+const nav = [
+  { href: pageUrl(lang), label: t(lang, 'nav.home'), key: '' },
+  { href: pageUrl(lang, 'dashboard'), label: t(lang, 'nav.dashboard'), key: 'dashboard' },
+  { href: pageUrl(lang, 'fuentes'), label: t(lang, 'nav.sources'), key: 'fuentes' },
+];
+const current = path.replace(/\/$/, '');
+---
+
+<!doctype html>
+<html lang={lang === 'es' ? 'es-CL' : 'en'}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={desc} />
+    <link rel="icon" href={`${import.meta.env.BASE_URL.replace(/\/?$/, '/')}favicon.svg`} type="image/svg+xml" />
+    <link rel="alternate" hreflang={other} href={pageUrl(other, path)} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={desc} />
+    <script is:inline>
+      try {
+        const saved = localStorage.getItem('theme');
+        if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
+      } catch {}
+    </script>
+  </head>
+  <body>
+    <a class="sr-only skip" href="#main">{t(lang, 'nav.skip')}</a>
+    <header class="site-header">
+      <div class="wrap bar">
+        <a class="brand" href={pageUrl(lang)}>
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="12" width="4" height="9" rx="1.5" fill="var(--series-1)"></rect><rect x="10" y="7" width="4" height="14" rx="1.5" fill="var(--series-1)" opacity=".75"></rect><rect x="17" y="3" width="4" height="18" rx="1.5" fill="var(--series-1)" opacity=".5"></rect></svg>
+          <span>{siteTitle}</span>
+        </a>
+        <nav aria-label="Principal">
+          {
+            nav.map((n) => (
+              <a href={n.href} aria-current={current === n.key ? 'page' : undefined}>
+                {n.label}
+              </a>
+            ))
+          }
+        </nav>
+        <div class="tools">
+          <a class="btn" href={pageUrl(other, path)} hreflang={other} lang={other}>{t(lang, 'lang.switch')}</a>
+          <button class="btn icon" id="theme-toggle" type="button" aria-label={t(lang, 'theme.toggle')} title={t(lang, 'theme.toggle')}>
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main id="main" class="wrap">
+      <slot />
+    </main>
+    <footer class="wrap site-footer">
+      <p class="muted small">
+        {t(lang, 'footer.note')} · <a href="https://github.com/danielfuentes89/Indicadores-chile">{t(lang, 'footer.repo')}</a>
+      </p>
+    </footer>
+    <script>
+      const btn = document.getElementById('theme-toggle');
+      btn?.addEventListener('click', () => {
+        const root = document.documentElement;
+        const isDark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        const next = isDark ? 'light' : 'dark';
+        root.dataset.theme = next;
+        try {
+          localStorage.setItem('theme', next);
+        } catch {}
+      });
+    </script>
+  </body>
+</html>
+
+<style>
+  .skip:focus {
+    position: fixed;
+    left: 16px;
+    top: 8px;
+    width: auto;
+    height: auto;
+    clip: auto;
+    padding: 8px 12px;
+    background: var(--surface);
+    z-index: 10;
+  }
+  .site-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 24px;
+  }
+  .bar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-height: 60px;
+    flex-wrap: wrap;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    color: var(--text);
+    text-decoration: none;
+  }
+  nav {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+  nav a {
+    color: var(--text-2);
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 0.9375rem;
+  }
+  nav a:hover {
+    background: var(--surface-2);
+  }
+  nav a[aria-current='page'] {
+    color: var(--text);
+    font-weight: 600;
+    background: var(--surface-2);
+  }
+  .tools {
+    margin-left: auto;
+    display: flex;
+    gap: 8px;
+  }
+  .site-footer {
+    margin-top: 48px;
+    padding-top: 16px;
+    padding-bottom: 32px;
+    border-top: 1px solid var(--border);
+  }
+  @media (max-width: 640px) {
+    .bar {
+      gap: 8px;
+    }
+    nav {
+      order: 3;
+      width: 100%;
+    }
+  }
+</style>

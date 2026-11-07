@@ -1,0 +1,103 @@
+---
+import KpiCard from '../../components/KpiCard.astro';
+import { LANGS, t, type Lang } from '../../i18n/ui.ts';
+import Base from '../../layouts/Base.astro';
+import { getCatalog } from '../../lib/data.ts';
+import { formatDateTime } from '../../lib/format.ts';
+import { pageUrl } from '../../lib/urls.ts';
+
+export function getStaticPaths() {
+  return LANGS.map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Lang;
+const catalog = await getCatalog();
+const featuredByArea = catalog.areas
+  .filter((a) => a.status === 'active')
+  .map((a) => ({ area: a, items: catalog.indicators.filter((i) => i.area === a.id && i.featured) }));
+const lastUpdate = catalog.indicators.map((i) => i.updatedAt).filter(Boolean).sort().at(-1);
+---
+
+<Base lang={lang}>
+  <h1>{t(lang, 'site.title')}</h1>
+  <p class="lead">
+    {t(lang, 'site.tagline')}
+    {lastUpdate && <span class="muted"> {t(lang, 'home.updated')} {formatDateTime(lastUpdate, lang).replace(/\.$/, '')}.</span>}
+  </p>
+
+  {
+    featuredByArea.map(({ area, items }) => (
+      <section aria-labelledby={`h-${area.id}`}>
+        <h2 id={`h-${area.id}`}>
+          <a href={pageUrl(lang, `area/${area.id}`)} class="area-link">{area.name[lang]}</a>
+        </h2>
+        <div class="grid">
+          {items.map((entry) => (
+            <KpiCard entry={entry} lang={lang} />
+          ))}
+        </div>
+      </section>
+    ))
+  }
+
+  <section class="card cta">
+    <div>
+      <h2>{t(lang, 'home.cta')}</h2>
+      <p class="muted">{t(lang, 'home.ctaText')}</p>
+    </div>
+    <a class="btn primary" href={pageUrl(lang, 'dashboard')}>{t(lang, 'nav.dashboard')} →</a>
+  </section>
+
+  <h2>{t(lang, 'home.areas')}</h2>
+  <div class="grid">
+    {
+      catalog.areas.map((a) => {
+        const count = catalog.indicators.filter((i) => i.area === a.id).length;
+        return (
+          <a class="card area" href={pageUrl(lang, `area/${a.id}`)}>
+            <strong>{a.name[lang]}</strong>
+            <span class="muted small">{a.description[lang]}</span>
+            <span class="tag">{a.status === 'planned' ? t(lang, 'area.planned') : `${count} ${t(lang, 'area.indicators')}`}</span>
+          </a>
+        );
+      })
+    }
+  </div>
+</Base>
+
+<style>
+  .area-link {
+    color: var(--text);
+    text-decoration: none;
+  }
+  .area-link:hover {
+    text-decoration: underline;
+  }
+  .cta {
+    margin-top: 32px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .cta h2 {
+    margin: 0 0 4px;
+  }
+  .cta p {
+    margin: 0;
+  }
+  .area {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: inherit;
+    text-decoration: none;
+  }
+  .area:hover {
+    border-color: var(--accent);
+  }
+  .area .tag {
+    align-self: flex-start;
+  }
+</style>

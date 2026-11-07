@@ -1,0 +1,137 @@
+---
+import type { SourceId, SourceSpec } from '../../../pipeline/schema.ts';
+import { LANGS, PLANNED_SOURCES, t, type Lang } from '../../i18n/ui.ts';
+import Base from '../../layouts/Base.astro';
+import { getCatalog, getStatus } from '../../lib/data.ts';
+import { formatDate, formatDateTime } from '../../lib/format.ts';
+import { pageUrl } from '../../lib/urls.ts';
+
+export function getStaticPaths() {
+  return LANGS.map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Lang;
+const catalog = await getCatalog();
+const status = await getStatus();
+const sources = Object.entries(catalog.sources) as [SourceId, SourceSpec][];
+const byId = new Map(catalog.indicators.map((i) => [i.id, i]));
+const planned = Object.entries(PLANNED_SOURCES);
+---
+
+<Base lang={lang} title={t(lang, 'sources.title')} path="fuentes">
+  <h1>{t(lang, 'sources.title')}</h1>
+  <p class="lead">{t(lang, 'sources.intro')}</p>
+
+  <h2>{t(lang, 'sources.active')}</h2>
+  <div class="grid">
+    {
+      sources.map(([id, s]) => {
+        const used = catalog.indicators.filter((i) => i.source === id).length;
+        return (
+          <div class="card src">
+            <a href={s.url}><strong>{s.name[lang]}</strong></a>
+            <div class="tags">
+              <span class="tag">{s.official ? t(lang, 'sources.official') : t(lang, 'sources.unofficial')}</span>
+              {s.auth === 'apikey' && <span class="tag">{t(lang, 'sources.auth')}</span>}
+              <span class="tag">{used} {t(lang, 'area.indicators')}</span>
+            </div>
+            <span class="muted small">{s.license[lang]}</span>
+          </div>
+        );
+      })
+    }
+  </div>
+
+  {
+    status && (
+      <section>
+        <h2>{t(lang, 'sources.status')}</h2>
+        <p class="muted small">{formatDateTime(status.generatedAt, lang)}</p>
+        <div class="table-scroll">
+          <table class="data">
+            <thead>
+              <tr>
+                <th scope="col">Indicador</th>
+                <th scope="col">{t(lang, 'serie.source')}</th>
+                <th scope="col">{t(lang, 'serie.last')}</th>
+                <th scope="col">Estado / Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {status.results.map((r) => {
+                const e = byId.get(r.id);
+                if (!e) return null;
+                return (
+                  <tr>
+                    <td><a href={pageUrl(lang, `serie/${r.id}`)}>{e.name[lang]}</a></td>
+                    <td>{r.source ?? '—'}</td>
+                    <td>{e.last ? formatDate(e.last[0], e.frequency, lang) : '—'}</td>
+                    <td>
+                      {r.ok ? `✓ ${t(lang, 'sources.ok')}` : `✕ ${t(lang, 'sources.failed')}`}
+                      {r.attempts.length > 0 && (
+                        <details>
+                          <summary class="small muted">{r.attempts.length}</summary>
+                          <ul class="small">
+                            {r.attempts.map((a) => (
+                              <li><code>{a.source}</code>: {a.error}</li>
+                            ))}
+                          </ul>
+                        </details>
+                      )}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    )
+  }
+
+  <h2>{t(lang, 'sources.planned')}</h2>
+  {
+    planned.map(([areaId, list]) => {
+      const area = catalog.areas.find((a) => a.id === areaId);
+      return (
+        <section>
+          <h3>{area?.name[lang] ?? areaId}</h3>
+          <ul class="planned">
+            {list.map((s) => (
+              <li>
+                <a href={s.url}>{s.name}</a> — <span class="muted">{s.note[lang]}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      );
+    })
+  }
+</Base>
+
+<style>
+  .src {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .planned {
+    padding-left: 20px;
+  }
+  .planned li {
+    margin: 6px 0;
+  }
+  h3 {
+    font-size: 1rem;
+    margin: 16px 0 4px;
+  }
+  td details {
+    display: inline-block;
+    margin-left: 6px;
+  }
+</style>

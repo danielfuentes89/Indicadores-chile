@@ -1,0 +1,127 @@
+---
+import type { CatalogEntry } from '../../pipeline/schema.ts';
+import { t, type Lang } from '../i18n/ui.ts';
+import { changeKind, formatDate, formatNumber } from '../lib/format.ts';
+import { pageUrl } from '../lib/urls.ts';
+
+interface Props {
+  entry: CatalogEntry;
+  lang: Lang;
+}
+const { entry, lang } = Astro.props;
+const name = (entry.short ?? entry.name)[lang];
+const last = entry.last;
+const prev = entry.previous;
+const kind = changeKind(entry.unit.es);
+let delta: number | null = null;
+if (last && prev) delta = kind === 'diff' ? last[1] - prev[1] : prev[1] !== 0 ? ((last[1] - prev[1]) / Math.abs(prev[1])) * 100 : null;
+const deltaText =
+  delta === null ? null : `${delta > 0 ? '+' : ''}${formatNumber(delta, lang, kind === 'diff' ? Math.max(1, Math.min(entry.decimals, 2)) : 2)}${kind === 'diff' ? (entry.unit.es.includes('%') ? ` ${t(lang, 'card.pp')}` : '') : '%'}`;
+
+// Sparkline (las cifras están en el texto; el trazo es decorativo).
+const W = 120;
+const H = 32;
+let path = '';
+const spark = entry.spark ?? [];
+if (spark.length > 1) {
+  const min = Math.min(...spark);
+  const max = Math.max(...spark);
+  const span = max - min || 1;
+  path = spark
+    .map((v, i) => `${i ? 'L' : 'M'}${((i / (spark.length - 1)) * W).toFixed(1)},${(H - 2 - ((v - min) / span) * (H - 4)).toFixed(1)}`)
+    .join('');
+}
+---
+
+<a class="card kpi" href={pageUrl(lang, `serie/${entry.id}`)}>
+  <div class="kpi-name">{name}</div>
+  {
+    last ? (
+      <>
+        <div class="kpi-value">
+          {formatNumber(last[1], lang, entry.decimals)}
+          <span class="kpi-unit">{entry.unit[lang]}</span>
+        </div>
+        <div class="kpi-meta">
+          <span>{formatDate(last[0], entry.frequency, lang)}</span>
+          {deltaText && (
+            <span class:list={['delta', delta! > 0 ? 'up' : delta! < 0 ? 'down' : '']}>
+              <span aria-hidden="true">{delta! > 0 ? '▲' : delta! < 0 ? '▼' : '■'}</span> {deltaText}
+              <span class="sr-only"> {t(lang, 'card.vsPrev')}</span>
+            </span>
+          )}
+        </div>
+        {path && (
+          <svg class="spark" viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" aria-hidden="true">
+            <path d={path} />
+          </svg>
+        )}
+      </>
+    ) : (
+      <div class="kpi-empty">
+        <strong>{t(lang, 'card.noData')}</strong>
+        <span class="muted small">{t(lang, 'card.noDataHint')}</span>
+      </div>
+    )
+  }
+</a>
+
+<style>
+  .kpi {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    color: inherit;
+    text-decoration: none;
+    transition: border-color 0.15s;
+  }
+  .kpi:hover {
+    border-color: var(--accent);
+  }
+  .kpi-name {
+    font-size: 0.875rem;
+    color: var(--text-2);
+    font-weight: 500;
+  }
+  .kpi-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+  .kpi-unit {
+    font-size: 0.8125rem;
+    font-weight: 400;
+    color: var(--muted);
+    letter-spacing: 0;
+  }
+  .kpi-meta {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    font-size: 0.8125rem;
+    color: var(--muted);
+  }
+  /* La dirección no implica "bueno" o "malo" (más inflación no es mejor): se muestra en tinta neutra. */
+  .delta {
+    color: var(--text-2);
+  }
+  .spark {
+    width: 100%;
+    height: 32px;
+    margin-top: 6px;
+  }
+  .spark path {
+    fill: none;
+    stroke: var(--series-1);
+    stroke-width: 2;
+    vector-effect: non-scaling-stroke;
+    stroke-linejoin: round;
+  }
+  .kpi-empty {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 8px 0;
+  }
+</style>

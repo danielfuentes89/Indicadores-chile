@@ -1,0 +1,2194 @@
+{
+ "generatedAt": "2026-11-07T17:49:55.523Z",
+ "areas": [
+  {
+   "id": "economia",
+   "name": {
+    "es": "Economía y finanzas",
+    "en": "Economy & finance"
+   },
+   "description": {
+    "es": "Tipo de cambio, unidades reajustables, inflación, actividad, empleo y materias primas.",
+    "en": "Exchange rates, indexed units, inflation, activity, employment and commodities."
+   },
+   "status": "active"
+  },
+  {
+   "id": "global",
+   "name": {
+    "es": "Chile en el mundo",
+    "en": "Chile in the world"
+   },
+   "description": {
+    "es": "Indicadores internacionales comparables (Banco Mundial, FMI) frente a la OCDE y América Latina.",
+    "en": "Internationally comparable indicators (World Bank, IMF) versus the OECD and Latin America."
+   },
+   "status": "active"
+  },
+  {
+   "id": "fiscal",
+   "name": {
+    "es": "Fiscal y transparencia",
+    "en": "Public finance & transparency"
+   },
+   "description": {
+    "es": "Ejecución presupuestaria (DIPRES), compras públicas (ChileCompra), lobby y probidad (CPLT).",
+    "en": "Budget execution (DIPRES), public procurement (ChileCompra), lobbying and asset declarations (CPLT)."
+   },
+   "status": "planned"
+  },
+  {
+   "id": "social",
+   "name": {
+    "es": "Social y territorial",
+    "en": "Social & regional"
+   },
+   "description": {
+    "es": "Pobreza (CASEN), salud (DEIS), educación (Mineduc), seguridad (CEAD) y datos por región y comuna.",
+    "en": "Poverty (CASEN), health (DEIS), education (Mineduc), public safety (CEAD) and regional data."
+   },
+   "status": "planned"
+  }
+ ],
+ "sources": {
+  "bcch": {
+   "name": {
+    "es": "Banco Central de Chile – Base de Datos Estadísticos",
+    "en": "Central Bank of Chile – Statistical Database"
+   },
+   "url": "https://si3.bcentral.cl/siete",
+   "license": {
+    "es": "Fuente: Banco Central de Chile. Uso libre citando la fuente.",
+    "en": "Source: Central Bank of Chile. Free use with attribution."
+   },
+   "auth": "apikey",
+   "official": true
+  },
+  "cmf": {
+   "name": {
+    "es": "Comisión para el Mercado Financiero (CMF)",
+    "en": "Financial Market Commission (CMF)"
+   },
+   "url": "https://api.cmfchile.cl",
+   "license": {
+    "es": "Fuente: CMF Chile.",
+    "en": "Source: CMF Chile."
+   },
+   "auth": "apikey",
+   "official": true
+  },
+  "mindicador": {
+   "name": {
+    "es": "mindicador.cl (respaldo, replica datos del Banco Central)",
+    "en": "mindicador.cl (fallback, mirrors Central Bank data)"
+   },
+   "url": "https://mindicador.cl",
+   "license": {
+    "es": "Servicio no oficial; datos originales del Banco Central de Chile.",
+    "en": "Unofficial service; original data from the Central Bank of Chile."
+   },
+   "auth": "none",
+   "official": false
+  },
+  "worldbank": {
+   "name": {
+    "es": "Banco Mundial – World Development Indicators y WGI",
+    "en": "World Bank – World Development Indicators & WGI"
+   },
+   "url": "https://data.worldbank.org/country/chile",
+   "license": {
+    "es": "CC BY 4.0, Banco Mundial.",
+    "en": "CC BY 4.0, World Bank."
+   },
+   "auth": "none",
+   "official": true
+  },
+  "imf": {
+   "name": {
+    "es": "FMI – World Economic Outlook (DataMapper)",
+    "en": "IMF – World Economic Outlook (DataMapper)"
+   },
+   "url": "https://www.imf.org/external/datamapper/profile/CHL",
+   "license": {
+    "es": "Fuente: Fondo Monetario Internacional, WEO.",
+    "en": "Source: International Monetary Fund, WEO."
+   },
+   "auth": "none",
+   "official": true
+  }
+ },
+ "indicators": [
+  {
+   "id": "dolar-observado",
+   "area": "economia",
+   "name": {
+    "es": "Dólar observado",
+    "en": "US dollar (observed rate)"
+   },
+   "short": {
+    "es": "Dólar",
+    "en": "USD"
+   },
+   "description": {
+    "es": "Tipo de cambio peso/dólar publicado por el Banco Central, calculado con las transacciones del día hábil anterior.",
+    "en": "Peso/dollar exchange rate published by the Central Bank, based on the previous business day's transactions."
+   },
+   "unit": {
+    "es": "pesos por dólar",
+    "en": "pesos per USD"
+   },
+   "decimals": 2,
+   "frequency": "D",
+   "featured": true,
+   "source": "mindicador",
+   "code": "dolar",
+   "updatedAt": "2026-11-07T17:40:18.786Z",
+   "last": [
+    "2026-11-06",
+    970.94
+   ],
+   "previous": [
+    "2026-11-05",
+    970.95
+   ],
+   "spark": [
+    922.21,
+    927.35,
+    921.7,
+    921.74,
+    926.25,
+    927.36,
+    935.71,
+    928.99,
+    924.94,
+    928.84,
+    924.78,
+    924.5,
+    933.92,
+    933,
+    932.84,
+    936.39,
+    946.24,
+    946.14,
+    941.93,
+    936.16,
+    935.57,
+    924.78,
+    928.42,
+    924.89,
+    914.46,
+    911.58,
+    913.86,
+    911.77,
+    916.3,
+    914.41,
+    912,
+    913.2,
+    913.15,
+    914.19,
+    922.12,
+    920.26,
+    923.23,
+    918.17,
+    914.64,
+    911.43,
+    918.42,
+    925.25,
+    929.18,
+    933.4,
+    936.86,
+    936.32,
+    933.47,
+    934.35,
+    933.82,
+    926.94,
+    925.97,
+    937.17,
+    940.91,
+    957.53,
+    955.37,
+    954.85,
+    958.42,
+    952,
+    945.87,
+    959.39,
+    965.71,
+    964.1,
+    969.7,
+    970.46,
+    972.6,
+    983.84,
+    984.82,
+    977.25,
+    967.79,
+    979.85,
+    981.61,
+    978.61,
+    980.79,
+    987.03,
+    984.09,
+    981.65,
+    981.86,
+    978.56,
+    976.82,
+    986.58,
+    990.35,
+    994.29,
+    985.14,
+    981.08,
+    993.22,
+    992.66,
+    981.82,
+    980.59,
+    970.95,
+    970.94
+   ],
+   "hasCompare": false,
+   "stale": false
+  },
+  {
+   "id": "euro",
+   "area": "economia",
+   "name": {
+    "es": "Euro",
+    "en": "Euro"
+   },
+   "description": {
+    "es": "Tipo de cambio peso/euro publicado por el Banco Central.",
+    "en": "Peso/euro exchange rate published by the Central Bank."
+   },
+   "unit": {
+    "es": "pesos por euro",
+    "en": "pesos per EUR"
+   },
+   "decimals": 2,
+   "frequency": "D",
+   "featured": false,
+   "source": "mindicador",
+   "code": "euro",
+   "updatedAt": "2026-11-07T17:40:30.366Z",
+   "last": [
+    "2026-11-06",
+    1090.94
+   ],
+   "previous": [
+    "2026-11-05",
+    1090.83
+   ],
+   "spark": [
+    1053.47,
+    1055.13,
+    1053.85,
+    1054.38,
+    1059.54,
+    1059.48,
+    1069.14,
+    1062.19,
+    1055.87,
+    1057.66,
+    1056.29,
+    1060.81,
+    1068.07,
+    1065.07,
+    1063.55,
+    1068.33,
+    1076.37,
+    1075.65,
+    1070.98,
+    1066.12,
+    1069.47,
+    1066.4,
+    1070.35,
+    1064.56,
+    1054.01,
+    1053.36,
+    1053.08,
+    1054.31,
+    1057.59,
+    1055.05,
+    1050.93,
+    1052.92,
+    1056.03,
+    1058.09,
+    1067.39,
+    1073.94,
+    1077.66,
+    1072.63,
+    1066.64,
+    1064.01,
+    1070.17,
+    1077.75,
+    1076.06,
+    1084.21,
+    1085.59,
+    1084.83,
+    1086.06,
+    1084.81,
+    1085.58,
+    1077.59,
+    1077.71,
+    1088.97,
+    1091.29,
+    1106.59,
+    1102.31,
+    1100.95,
+    1099.86,
+    1091.74,
+    1081.49,
+    1091.83,
+    1098.15,
+    1098.06,
+    1103.06,
+    1098.3,
+    1102.72,
+    1104.57,
+    1108.41,
+    1094.96,
+    1089.73,
+    1097.13,
+    1100.46,
+    1095.5,
+    1097.69,
+    1099.02,
+    1103.49,
+    1101.99,
+    1100.86,
+    1099.26,
+    1097.55,
+    1107.27,
+    1108.39,
+    1112.8,
+    1097.16,
+    1093.25,
+    1109.37,
+    1107.26,
+    1100.2,
+    1097.72,
+    1090.83,
+    1090.94
+   ],
+   "hasCompare": false,
+   "stale": false
+  },
+  {
+   "id": "uf",
+   "area": "economia",
+   "name": {
+    "es": "Unidad de Fomento (UF)",
+    "en": "Unidad de Fomento (UF)"
+   },
+   "short": {
+    "es": "UF",
+    "en": "UF"
+   },
+   "description": {
+    "es": "Unidad de cuenta reajustable según la inflación, usada en créditos hipotecarios, arriendos y contratos.",
+    "en": "Inflation-indexed unit of account used in mortgages, rents and contracts."
+   },
+   "unit": {
+    "es": "pesos",
+    "en": "pesos"
+   },
+   "decimals": 2,
+   "frequency": "D",
+   "featured": true,
+   "source": "mindicador",
+   "code": "uf",
+   "updatedAt": "2026-11-07T17:40:38.009Z",
+   "last": [
+    "2026-11-07",
+    41284.83
+   ],
+   "previous": [
+    "2026-11-06",
+    41279.51
+   ],
+   "spark": [
+    40846.11,
+    40847.42,
+    40848.74,
+    40850.06,
+    40851.38,
+    40852.69,
+    40854.01,
+    40855.33,
+    40856.64,
+    40857.96,
+    40859.28,
+    40860.6,
+    40861.91,
+    40863.23,
+    40864.55,
+    40865.87,
+    40867.18,
+    40868.5,
+    40869.82,
+    40871.14,
+    40872.45,
+    40873.77,
+    40875.09,
+    40876.41,
+    40877.73,
+    40879.04,
+    40880.36,
+    40881.68,
+    40883,
+    40884.32,
+    40885.63,
+    40893.78,
+    40901.94,
+    40910.1,
+    40918.25,
+    40926.41,
+    40934.58,
+    40942.74,
+    40950.9,
+    40959.07,
+    40967.24,
+    40975.41,
+    40983.58,
+    40991.75,
+    40999.93,
+    41008.1,
+    41016.28,
+    41024.46,
+    41032.64,
+    41040.82,
+    41049.01,
+    41057.2,
+    41065.38,
+    41073.57,
+    41081.76,
+    41089.96,
+    41098.15,
+    41106.35,
+    41114.54,
+    41122.74,
+    41130.94,
+    41136.24,
+    41141.53,
+    41146.83,
+    41152.13,
+    41157.43,
+    41162.73,
+    41168.03,
+    41173.33,
+    41178.64,
+    41183.94,
+    41189.24,
+    41194.55,
+    41199.85,
+    41205.16,
+    41210.47,
+    41215.77,
+    41221.08,
+    41226.39,
+    41231.7,
+    41237.01,
+    41242.32,
+    41247.63,
+    41252.94,
+    41258.26,
+    41263.57,
+    41268.88,
+    41274.2,
+    41279.51,
+    41284.83
+   ],
+   "hasCompare": false,
+   "stale": false
+  },
+  {
+   "id": "utm",
+   "area": "economia",
+   "name": {
+    "es": "Unidad Tributaria Mensual (UTM)",
+    "en": "Monthly Tax Unit (UTM)"
+   },
+   "description": {
+    "es": "Unidad usada para fijar impuestos, multas y aranceles; se reajusta mensualmente según el IPC.",
+    "en": "Unit used to set taxes, fines and fees; adjusted monthly by CPI."
+   },
+   "unit": {
+    "es": "pesos",
+    "en": "pesos"
+   },
+   "decimals": 0,
+   "frequency": "M",
+   "featured": false,
+   "source": "mindicador",
+   "code": "utm",
+   "updatedAt": "2026-11-07T17:40:48.475Z",
+   "last": [
+    "2026-11-01",
+    72440
+   ],
+   "previous": [
+    "2026-10-01",
+    72151
+   ],
+   "spark": [
+    64216,
+    64666,
+    64343,
+    64793,
+    65182,
+    65443,
+    65770,
+    65967,
+    65901,
+    66362,
+    66561,
+    66628,
+    67294,
+    67429,
+    67294,
+    68034,
+    68306,
+    68648,
+    68785,
+    68923,
+    68647,
+    69265,
+    69265,
+    69542,
+    69542,
+    69751,
+    69611,
+    69889,
+    69889,
+    70588,
+    71506,
+    71649,
+    71649,
+    71721,
+    72151,
+    72440
+   ],
+   "hasCompare": false,
+   "stale": false
+  },
+  {
+   "id": "tpm",
+   "area": "economia",
+   "name": {
+    "es": "Tasa de Política Monetaria (TPM)",
+    "en": "Monetary Policy Rate"
+   },
+   "short": {
+    "es": "TPM",
+    "en": "Policy rate"
+   },
+   "description": {
+    "es": "Tasa de interés que fija el Consejo del Banco Central para conducir la política monetaria.",
+    "en": "Interest rate set by the Central Bank Board to conduct monetary policy."
+   },
+   "unit": {
+    "es": "% anual",
+    "en": "% per year"
+   },
+   "decimals": 2,
+   "frequency": "D",
+   "featured": true,
+   "source": "mindicador",
+   "code": "tpm",
+   "updatedAt": "2026-11-07T17:41:02.005Z",
+   "last": [
+    "2026-11-06",
+    4.5
+   ],
+   "previous": [
+    "2026-11-05",
+    4.5
+   ],
+   "spark": [
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5
+   ],
+   "hasCompare": false,
+   "stale": false
+  },
+  {
+   "id": "ipc-anual",
+   "area": "economia",
+   "name": {
+    "es": "Inflación (IPC, variación 12 meses)",
+    "en": "Inflation (CPI, 12-month change)"
+   },
+   "short": {
+    "es": "Inflación 12m",
+    "en": "Inflation 12m"
+   },
+   "description": {
+    "es": "Variación del Índice de Precios al Consumidor respecto del mismo mes del año anterior (serie empalmada por el Banco Central).",
+    "en": "Change in the Consumer Price Index versus the same month a year earlier (series spliced by the Central Bank)."
+   },
+   "unit": {
+    "es": "%",
+    "en": "%"
+   },
+   "decimals": 1,
+   "frequency": "M",
+   "featured": true,
+   "hasCompare": false,
+   "stale": false
+  },
+  {
+   "id": "ipc-mensual",
+   "area": "economia",
+   "name": {
+    "es": "IPC, variación mensual",
+    "en": "CPI, monthly change"
+   },
+   "description": {
+    "es": "Variación mensual del Índice de Precios al Consumidor publicada por el INE.",
+    "en": "Monthly change in the Consumer Price Index published by INE."
+   },
+   "unit": {
+    "es": "%",
+    "en": "%"
+   },
+   "decimals": 1,
+   "frequency": "M",
+   "featured": false,
+   "source": "mindicador",
+   "code": "ipc",
+   "updatedAt": "2026-11-07T17:41:13.570Z",
+   "last": [
+    "2025-12-01",
+    -0.2
+   ],
+   "previous": [
+    "2025-11-01",
+    0.3
+   ],
+   "spark": [
+    0.8,
+    -0.1,
+    1.1,
+    0.3,
+    0.1,
+    -0.2,
+    0.4,
+    0.1,
+    0.7,
+    0.4,
+    0.7,
+    -0.5,
+    0.7,
+    0.6,
+    0.4,
+    0.5,
+    0.3,
+    -0.1,
+    0.7,
+    0.3,
+    0.1,
+    1,
+    0.2,
+    -0.2,
+    1.1,
+    0.4,
+    0.5,
+    0.2,
+    0.2,
+    -0.4,
+    0.9,
+    0,
+    0.4,
+    0,
+    0.3,
+    -0.2
+   ],
+   "hasCompare": false,
+   "stale": true
+  },
+  {
+   "id": "expectativa-inflacion",
+   "area": "economia",
+   "name": {
+    "es": "Expectativa de inflación a 12 meses (EEE)",
+    "en": "12-month inflation expectations (EEE)"
+   },
+   "description": {
+    "es": "Mediana de la Encuesta de Expectativas Económicas del Banco Central para la inflación en 11 meses más (variación 12 meses).",
+    "en": "Median of the Central Bank's Economic Expectations Survey for inflation 11 months ahead (12-month change)."
+   },
+   "unit": {
+    "es": "%",
+    "en": "%"
+   },
+   "decimals": 1,
+   "frequency": "M",
+   "featured": false,
+   "hasCompare": false,
+   "stale": false
+  },
+  {
+   "id": "imacec",
+   "area": "economia",
+   "name": {
+    "es": "Imacec (variación anual)",
+    "en": "Imacec (year-on-year change)"
+   },
+   "short": {
+    "es": "Imacec",
+    "en": "Imacec"
+   },
+   "description": {
+    "es": "Indicador mensual de actividad económica, aproximación mensual del PIB. Variación respecto del mismo mes del año anterior.",
+    "en": "Monthly economic activity index, a monthly proxy for GDP. Change versus the same month a year earlier."
+   },
+   "unit": {
+    "es": "%",
+    "en": "%"
+   },
+   "decimals": 1,
+   "frequency": "M",
+   "featured": true,
+   "source": "mindicador",
+   "code": "imacec",
+   "updatedAt": "2026-11-07T17:41:22.117Z",
+   "last": [
+    "2026-09-01",
+    0.2
+   ],
+   "previous": [
+    "2026-08-01",
+    -1
+   ],
+   "spark": [
+    0.3,
+    1.2,
+    -1,
+    2.5,
+    4.5,
+    0.8,
+    3.5,
+    1.1,
+    0.1,
+    4.2,
+    2.3,
+    0,
+    2.3,
+    2.1,
+    6.6,
+    2.5,
+    -0.1,
+    3.8,
+    2.5,
+    3.2,
+    3.1,
+    1.8,
+    0.5,
+    3.2,
+    2.2,
+    1.2,
+    1.7,
+    -0.1,
+    -0.3,
+    -0.1,
+    -1.2,
+    -0.9,
+    2.4,
+    -1.5,
+    -1,
+    0.2
+   ],
+   "hasCompare": false,
+   "stale": false
+  },
+  {
+   "id": "imacec-no-minero",
+   "area": "economia",
+   "name": {
+    "es": "Imacec no minero (variación anual)",
+    "en": "Non-mining Imacec (year-on-year change)"
+   },
+   "description": {
+    "es": "Actividad económica excluyendo la minería, variación respecto del mismo mes del año anterior.",
+    "en": "Economic activity excluding mining, change versus the same month a year earlier."
+   },
+   "unit": {
+    "es": "%",
+    "en": "%"
+   },
+   "decimals": 1,
+   "frequency": "M",
+   "featured": false,
+   "hasCompare": false,
+   "stale": false
+  },
+  {
+   "id": "pib",
+   "area": "economia",
+   "name": {
+    "es": "PIB (variación anual)",
+    "en": "GDP (year-on-year change)"
+   },
+   "description": {
+    "es": "Producto Interno Bruto trimestral en volumen (precios del año anterior encadenados), variación respecto del mismo trimestre del año anterior.",
+    "en": "Quarterly real Gross Domestic Product (chained previous-year prices), change versus the same quarter a year earlier."
+   },
+   "unit": {
+    "es": "%",
+    "en": "%"
+   },
+   "decimals": 1,
+   "frequency": "Q",
+   "featured": false,
+   "hasCompare": false,
+   "stale": false
+  },
+  {
+   "id": "desempleo",
+   "area": "economia",
+   "name": {
+    "es": "Tasa de desempleo",
+    "en": "Unemployment rate"
+   },
+   "short": {
+    "es": "Desempleo",
+    "en": "Unemployment"
+   },
+   "description": {
+    "es": "Tasa de desocupación nacional de la Encuesta Nacional de Empleo del INE (trimestre móvil terminado en el mes indicado).",
+    "en": "National unemployment rate from INE's National Employment Survey (rolling quarter ending in the month shown)."
+   },
+   "unit": {
+    "es": "%",
+    "en": "%"
+   },
+   "decimals": 1,
+   "frequency": "M",
+   "featured": true,
+   "source": "mindicador",
+   "code": "tasa_desempleo",
+   "updatedAt": "2026-11-07T17:41:26.850Z",
+   "last": [
+    "2026-09-01",
+    9.8
+   ],
+   "previous": [
+    "2026-08-01",
+    9.64
+   ],
+   "spark": [
+    8.89,
+    8.73,
+    8.48,
+    8.44,
+    8.5,
+    8.68,
+    8.52,
+    8.31,
+    8.35,
+    8.68,
+    8.9,
+    8.74,
+    8.58,
+    8.22,
+    8.08,
+    8.02,
+    8.38,
+    8.71,
+    8.84,
+    8.94,
+    8.89,
+    8.7,
+    8.56,
+    8.53,
+    8.45,
+    8.42,
+    8.05,
+    8.28,
+    8.33,
+    8.93,
+    9.11,
+    9.44,
+    9.44,
+    9.53,
+    9.64,
+    9.8
+   ],
+   "hasCompare": false,
+   "stale": false
+  },
+  {
+   "id": "cobre",
+   "area": "economia",
+   "name": {
+    "es": "Precio del cobre",
+    "en": "Copper price"
+   },
+   "short": {
+    "es": "Cobre",
+    "en": "Copper"
+   },
+   "description": {
+    "es": "Precio del cobre refinado en la Bolsa de Metales de Londres (BML).",
+    "en": "Price of refined copper on the London Metal Exchange (LME)."
+   },
+   "unit": {
+    "es": "dólares por libra",
+    "en": "USD per pound"
+   },
+   "decimals": 2,
+   "frequency": "D",
+   "featured": true,
+   "source": "mindicador",
+   "code": "libra_cobre",
+   "updatedAt": "2026-11-07T17:41:37.231Z",
+   "last": [
+    "2026-11-06",
+    6.4
+   ],
+   "previous": [
+    "2026-11-05",
+    6.42
+   ],
+   "spark": [
+    6.01,
+    6.06,
+    6.01,
+    6.03,
+    6.04,
+    6.05,
+    6.03,
+    5.94,
+    6.1,
+    6.09,
+    6.12,
+    6.17,
+    6.15,
+    6.12,
+    6.18,
+    6.3,
+    6.27,
+    6.17,
+    6.19,
+    6.25,
+    6.22,
+    6.17,
+    6.28,
+    6.28,
+    6.32,
+    6.43,
+    6.45,
+    6.45,
+    6.44,
+    6.5,
+    6.51,
+    6.48,
+    6.53,
+    6.61,
+    6.62,
+    6.46,
+    6.52,
+    6.4,
+    6.48,
+    6.51,
+    6.58,
+    6.56,
+    6.56,
+    6.55,
+    6.55,
+    6.53,
+    6.49,
+    6.53,
+    6.57,
+    6.62,
+    6.69,
+    6.72,
+    6.45,
+    6.45,
+    6.31,
+    6.36,
+    6.44,
+    6.6,
+    6.67,
+    6.72,
+    6.66,
+    6.69,
+    6.68,
+    6.55,
+    6.57,
+    6.56,
+    6.48,
+    6.49,
+    6.58,
+    6.57,
+    6.61,
+    6.53,
+    6.71,
+    6.67,
+    6.62,
+    6.54,
+    6.58,
+    6.55,
+    6.62,
+    6.56,
+    6.44,
+    6.56,
+    6.58,
+    6.65,
+    6.66,
+    6.61,
+    6.5,
+    6.58,
+    6.42,
+    6.4
+   ],
+   "hasCompare": false,
+   "stale": false
+  },
+  {
+   "id": "litio",
+   "area": "economia",
+   "name": {
+    "es": "Precio del litio",
+    "en": "Lithium price"
+   },
+   "description": {
+    "es": "Precio internacional del litio informado por el Banco Central.",
+    "en": "International lithium price reported by the Central Bank."
+   },
+   "unit": {
+    "es": "dólares por kilo",
+    "en": "USD per kg"
+   },
+   "decimals": 2,
+   "frequency": "D",
+   "featured": false,
+   "hasCompare": false,
+   "stale": false
+  },
+  {
+   "id": "petroleo-wti",
+   "area": "economia",
+   "name": {
+    "es": "Petróleo WTI",
+    "en": "WTI crude oil"
+   },
+   "description": {
+    "es": "Precio del barril de petróleo West Texas Intermediate.",
+    "en": "Price per barrel of West Texas Intermediate crude oil."
+   },
+   "unit": {
+    "es": "dólares por barril",
+    "en": "USD per barrel"
+   },
+   "decimals": 2,
+   "frequency": "D",
+   "featured": false,
+   "hasCompare": false,
+   "stale": false
+  },
+  {
+   "id": "balanza-comercial",
+   "area": "economia",
+   "name": {
+    "es": "Saldo de la balanza comercial",
+    "en": "Trade balance"
+   },
+   "description": {
+    "es": "Exportaciones menos importaciones de bienes, según la balanza de pagos del Banco Central.",
+    "en": "Goods exports minus imports, from the Central Bank's balance of payments."
+   },
+   "unit": {
+    "es": "millones de dólares",
+    "en": "USD millions"
+   },
+   "decimals": 1,
+   "frequency": "M",
+   "featured": false,
+   "hasCompare": false,
+   "stale": false
+  },
+  {
+   "id": "pib-per-capita-ppa",
+   "area": "global",
+   "name": {
+    "es": "PIB per cápita (PPA)",
+    "en": "GDP per capita (PPP)"
+   },
+   "short": {
+    "es": "PIB per cápita PPA",
+    "en": "GDP per capita PPP"
+   },
+   "description": {
+    "es": "Producto por habitante a paridad de poder adquisitivo, en dólares internacionales corrientes.",
+    "en": "Output per person at purchasing power parity, in current international dollars."
+   },
+   "unit": {
+    "es": "dólares internacionales",
+    "en": "international dollars"
+   },
+   "decimals": 0,
+   "frequency": "A",
+   "featured": true,
+   "compare": [
+    {
+     "code": "OED",
+     "label": {
+      "es": "Promedio OCDE",
+      "en": "OECD average"
+     }
+    },
+    {
+     "code": "LCN",
+     "label": {
+      "es": "América Latina y el Caribe",
+      "en": "Latin America & Caribbean"
+     }
+    }
+   ],
+   "source": "worldbank",
+   "code": "NY.GDP.PCAP.PP.CD",
+   "updatedAt": "2026-11-07T17:41:37.654Z",
+   "last": [
+    "2025-01-01",
+    37774.0879069903
+   ],
+   "previous": [
+    "2024-01-01",
+    36070.892945837
+   ],
+   "spark": [
+    15510.7700739452,
+    16697.5160217416,
+    16375.9648536011,
+    15951.3304877878,
+    17917.8951217097,
+    20121.6834214209,
+    21366.1771264909,
+    22201.0660684337,
+    22553.6161787372,
+    22468.3125745547,
+    23256.5036042211,
+    24295.223766602,
+    25305.0903462611,
+    25613.9095717623,
+    25357.0056990873,
+    29106.6356522053,
+    30918.9258262719,
+    33173.5278418356,
+    36070.892945837,
+    37774.0879069903
+   ],
+   "hasCompare": true,
+   "stale": false
+  },
+  {
+   "id": "crecimiento-fmi",
+   "area": "global",
+   "name": {
+    "es": "Crecimiento del PIB real (FMI)",
+    "en": "Real GDP growth (IMF)"
+   },
+   "short": {
+    "es": "Crecimiento PIB (FMI)",
+    "en": "GDP growth (IMF)"
+   },
+   "description": {
+    "es": "Variación anual del PIB real según el World Economic Outlook del FMI, incluidas sus proyecciones.",
+    "en": "Annual real GDP growth from the IMF World Economic Outlook, including its projections."
+   },
+   "unit": {
+    "es": "%",
+    "en": "%"
+   },
+   "decimals": 1,
+   "frequency": "A",
+   "featured": true,
+   "compare": [
+    {
+     "code": "WEOWORLD",
+     "label": {
+      "es": "Mundo",
+      "en": "World"
+     }
+    },
+    {
+     "code": "ADVEC",
+     "label": {
+      "es": "Economías avanzadas",
+      "en": "Advanced economies"
+     }
+    },
+    {
+     "code": "SMQ",
+     "label": {
+      "es": "América del Sur",
+      "en": "South America"
+     }
+    }
+   ],
+   "source": "imf",
+   "code": "NGDP_RPCH",
+   "updatedAt": "2026-11-07T17:41:38.386Z",
+   "last": [
+    "2025-01-01",
+    2.5
+   ],
+   "previous": [
+    "2024-01-01",
+    2.8
+   ],
+   "spark": [
+    6,
+    5.2,
+    3.8,
+    -1.1,
+    5.9,
+    6.2,
+    6.2,
+    3.3,
+    1.8,
+    2.2,
+    1.8,
+    1.4,
+    4,
+    0.6,
+    -6.1,
+    11.3,
+    2.1,
+    0.7,
+    2.8,
+    2.5
+   ],
+   "hasCompare": true,
+   "projectionFrom": "2026",
+   "stale": false
+  },
+  {
+   "id": "inflacion-fmi",
+   "area": "global",
+   "name": {
+    "es": "Inflación promedio anual (FMI)",
+    "en": "Average annual inflation (IMF)"
+   },
+   "description": {
+    "es": "Variación promedio anual de los precios al consumidor según el FMI, incluidas proyecciones.",
+    "en": "Average annual consumer price change per the IMF, including projections."
+   },
+   "unit": {
+    "es": "%",
+    "en": "%"
+   },
+   "decimals": 1,
+   "frequency": "A",
+   "featured": false,
+   "compare": [
+    {
+     "code": "WEOWORLD",
+     "label": {
+      "es": "Mundo",
+      "en": "World"
+     }
+    },
+    {
+     "code": "ADVEC",
+     "label": {
+      "es": "Economías avanzadas",
+      "en": "Advanced economies"
+     }
+    },
+    {
+     "code": "SMQ",
+     "label": {
+      "es": "América del Sur",
+      "en": "South America"
+     }
+    }
+   ],
+   "source": "imf",
+   "code": "PCPIPCH",
+   "updatedAt": "2026-11-07T17:41:38.950Z",
+   "last": [
+    "2025-01-01",
+    4.2
+   ],
+   "previous": [
+    "2024-01-01",
+    3.9
+   ],
+   "spark": [
+    3.4,
+    4.4,
+    8.7,
+    1.5,
+    1.4,
+    3.3,
+    3,
+    1.8,
+    4.7,
+    4.3,
+    3.8,
+    2.2,
+    2.3,
+    2.3,
+    3,
+    4.5,
+    11.6,
+    7.6,
+    3.9,
+    4.2
+   ],
+   "hasCompare": true,
+   "projectionFrom": "2026",
+   "stale": false
+  },
+  {
+   "id": "desempleo-fmi",
+   "area": "global",
+   "name": {
+    "es": "Desempleo (FMI)",
+    "en": "Unemployment (IMF)"
+   },
+   "description": {
+    "es": "Tasa de desempleo anual según el FMI, incluidas proyecciones.",
+    "en": "Annual unemployment rate per the IMF, including projections."
+   },
+   "unit": {
+    "es": "%",
+    "en": "%"
+   },
+   "decimals": 1,
+   "frequency": "A",
+   "featured": false,
+   "compare": [
+    {
+     "code": "ADVEC",
+     "label": {
+      "es": "Economías avanzadas",
+      "en": "Advanced economies"
+     }
+    }
+   ],
+   "source": "imf",
+   "code": "LUR",
+   "updatedAt": "2026-11-07T17:41:39.283Z",
+   "last": [
+    "2025-01-01",
+    8.5
+   ],
+   "previous": [
+    "2024-01-01",
+    8.5
+   ],
+   "spark": [
+    8,
+    7,
+    7.8,
+    11.1,
+    8.3,
+    7.3,
+    6.6,
+    6.1,
+    6.5,
+    6.3,
+    6.7,
+    7,
+    7.4,
+    7.2,
+    10.8,
+    8.9,
+    7.9,
+    8.7,
+    8.5,
+    8.5
+   ],
+   "hasCompare": true,
+   "projectionFrom": "2026",
+   "stale": false
+  },
+  {
+   "id": "deuda-publica",
+   "area": "global",
+   "name": {
+    "es": "Deuda bruta del gobierno general (FMI)",
+    "en": "General government gross debt (IMF)"
+   },
+   "short": {
+    "es": "Deuda pública",
+    "en": "Public debt"
+   },
+   "description": {
+    "es": "Deuda bruta del gobierno general como porcentaje del PIB, según el FMI, incluidas proyecciones.",
+    "en": "General government gross debt as a share of GDP, per the IMF, including projections."
+   },
+   "unit": {
+    "es": "% del PIB",
+    "en": "% of GDP"
+   },
+   "decimals": 1,
+   "frequency": "A",
+   "featured": true,
+   "compare": [
+    {
+     "code": "ADVEC",
+     "label": {
+      "es": "Economías avanzadas",
+      "en": "Advanced economies"
+     }
+    },
+    {
+     "code": "OEMDC",
+     "label": {
+      "es": "Emergentes y en desarrollo",
+      "en": "Emerging & developing"
+     }
+    },
+    {
+     "code": "SMQ",
+     "label": {
+      "es": "América del Sur",
+      "en": "South America"
+     }
+    }
+   ],
+   "source": "imf",
+   "code": "GGXWDG_NGDP",
+   "updatedAt": "2026-11-07T17:41:39.628Z",
+   "last": [
+    "2025-01-01",
+    41.5
+   ],
+   "previous": [
+    "2024-01-01",
+    41.8
+   ],
+   "spark": [
+    5,
+    3.9,
+    4.9,
+    5.8,
+    8.6,
+    11.1,
+    11.9,
+    12.8,
+    15,
+    17.4,
+    21.1,
+    23.7,
+    25.8,
+    28.3,
+    32.4,
+    36.4,
+    37.9,
+    39.4,
+    41.8,
+    41.5
+   ],
+   "hasCompare": true,
+   "projectionFrom": "2026",
+   "stale": false
+  },
+  {
+   "id": "gini",
+   "area": "global",
+   "name": {
+    "es": "Índice de Gini",
+    "en": "Gini index"
+   },
+   "description": {
+    "es": "Desigualdad de ingresos (0 = igualdad perfecta, 100 = máxima desigualdad), estimación del Banco Mundial a partir de la CASEN.",
+    "en": "Income inequality (0 = perfect equality, 100 = maximum inequality), World Bank estimate based on CASEN."
+   },
+   "unit": {
+    "es": "puntos (0–100)",
+    "en": "points (0–100)"
+   },
+   "decimals": 1,
+   "frequency": "A",
+   "featured": false,
+   "source": "worldbank",
+   "code": "SI.POV.GINI",
+   "updatedAt": "2026-11-07T17:41:41.713Z",
+   "last": [
+    "2024-01-01",
+    43
+   ],
+   "previous": [
+    "2022-01-01",
+    43.2
+   ],
+   "spark": [
+    56.2,
+    57.2,
+    54.8,
+    56.4,
+    54.9,
+    55.5,
+    52.8,
+    51.5,
+    47.7,
+    47.4,
+    46.9,
+    46.8,
+    45.3,
+    45.3,
+    47,
+    43.2,
+    43
+   ],
+   "hasCompare": false,
+   "stale": false
+  },
+  {
+   "id": "esperanza-de-vida",
+   "area": "global",
+   "name": {
+    "es": "Esperanza de vida al nacer",
+    "en": "Life expectancy at birth"
+   },
+   "description": {
+    "es": "Años que viviría un recién nacido si se mantuvieran los patrones de mortalidad del momento.",
+    "en": "Years a newborn would live if current mortality patterns held."
+   },
+   "unit": {
+    "es": "años",
+    "en": "years"
+   },
+   "decimals": 1,
+   "frequency": "A",
+   "featured": false,
+   "compare": [
+    {
+     "code": "OED",
+     "label": {
+      "es": "Promedio OCDE",
+      "en": "OECD average"
+     }
+    },
+    {
+     "code": "LCN",
+     "label": {
+      "es": "América Latina y el Caribe",
+      "en": "Latin America & Caribbean"
+     }
+    }
+   ],
+   "source": "worldbank",
+   "code": "SP.DYN.LE00.IN",
+   "updatedAt": "2026-11-07T17:41:42.606Z",
+   "last": [
+    "2024-01-01",
+    81.359
+   ],
+   "previous": [
+    "2023-01-01",
+    81.167
+   ],
+   "spark": [
+    78.459,
+    78.533,
+    78.652,
+    78.752,
+    78.89,
+    79.095,
+    79.236,
+    79.221,
+    79.551,
+    79.714,
+    80.008,
+    80.295,
+    80.61,
+    80.559,
+    80.324,
+    79.349,
+    78.876,
+    79.176,
+    81.167,
+    81.359
+   ],
+   "hasCompare": true,
+   "stale": false
+  },
+  {
+   "id": "control-corrupcion",
+   "area": "global",
+   "name": {
+    "es": "Control de la corrupción (WGI)",
+    "en": "Control of Corruption (WGI)"
+   },
+   "short": {
+    "es": "Control corrupción",
+    "en": "Control of corruption"
+   },
+   "description": {
+    "es": "Indicador de Gobernanza Mundial del Banco Mundial; escala aproximada de −2,5 (débil) a +2,5 (fuerte).",
+    "en": "World Bank Worldwide Governance Indicator; approximate scale from −2.5 (weak) to +2.5 (strong)."
+   },
+   "unit": {
+    "es": "puntaje (−2,5 a 2,5)",
+    "en": "score (−2.5 to 2.5)"
+   },
+   "decimals": 2,
+   "frequency": "A",
+   "featured": true,
+   "source": "worldbank",
+   "code": "GOV_WGI_CC.EST",
+   "updatedAt": "2026-11-07T17:41:42.677Z",
+   "last": [
+    "2025-01-01",
+    1.0992872
+   ],
+   "previous": [
+    "2024-01-01",
+    1.1425214
+   ],
+   "spark": [
+    1.4715552,
+    1.3959547,
+    1.3977395,
+    1.4232351,
+    1.5102365,
+    1.5447953,
+    1.479868,
+    1.4312515,
+    1.3859956,
+    1.1458708,
+    1.1288752,
+    1.1137707,
+    1.1019812,
+    1.1579819,
+    1.2173713,
+    1.148412,
+    1.1468266,
+    1.0570234,
+    1.1425214,
+    1.0992872
+   ],
+   "hasCompare": false,
+   "stale": false
+  },
+  {
+   "id": "estado-de-derecho",
+   "area": "global",
+   "name": {
+    "es": "Estado de derecho (WGI)",
+    "en": "Rule of Law (WGI)"
+   },
+   "description": {
+    "es": "Indicador de Gobernanza Mundial del Banco Mundial; escala aproximada de −2,5 a +2,5.",
+    "en": "World Bank Worldwide Governance Indicator; approximate scale from −2.5 to +2.5."
+   },
+   "unit": {
+    "es": "puntaje (−2,5 a 2,5)",
+    "en": "score (−2.5 to 2.5)"
+   },
+   "decimals": 2,
+   "frequency": "A",
+   "featured": false,
+   "source": "worldbank",
+   "code": "GOV_WGI_RL.EST",
+   "updatedAt": "2026-11-07T17:41:43.284Z",
+   "last": [
+    "2025-01-01",
+    0.680463
+   ],
+   "previous": [
+    "2024-01-01",
+    0.7012062
+   ],
+   "spark": [
+    1.2704787,
+    1.2731646,
+    1.2322033,
+    1.2423694,
+    1.2128113,
+    1.1149719,
+    1.1387796,
+    1.0762879,
+    1.0646032,
+    1.0157042,
+    0.9933308,
+    0.980063,
+    0.9809189,
+    0.9106858,
+    0.752396,
+    0.7757812,
+    0.7587361,
+    0.6675609,
+    0.7012062,
+    0.680463
+   ],
+   "hasCompare": false,
+   "stale": false
+  },
+  {
+   "id": "efectividad-gobierno",
+   "area": "global",
+   "name": {
+    "es": "Efectividad del gobierno (WGI)",
+    "en": "Government Effectiveness (WGI)"
+   },
+   "description": {
+    "es": "Calidad de los servicios públicos y de la formulación de políticas; escala aproximada de −2,5 a +2,5.",
+    "en": "Quality of public services and policy formulation; approximate scale from −2.5 to +2.5."
+   },
+   "unit": {
+    "es": "puntaje (−2,5 a 2,5)",
+    "en": "score (−2.5 to 2.5)"
+   },
+   "decimals": 2,
+   "frequency": "A",
+   "featured": false,
+   "source": "worldbank",
+   "code": "GOV_WGI_GE.EST",
+   "updatedAt": "2026-11-07T17:41:43.587Z",
+   "last": [
+    "2025-01-01",
+    1.0424726
+   ],
+   "previous": [
+    "2024-01-01",
+    1.0140437
+   ],
+   "spark": [
+    1.2736093,
+    1.2808682,
+    1.2664846,
+    1.333997,
+    1.2083876,
+    1.2731834,
+    1.3079018,
+    1.2777127,
+    1.1779137,
+    1.1198481,
+    1.0533135,
+    1.0363271,
+    1.0985906,
+    1.1067349,
+    0.9318715,
+    0.9124462,
+    0.9289252,
+    1.0056495,
+    1.0140437,
+    1.0424726
+   ],
+   "hasCompare": false,
+   "stale": false
+  },
+  {
+   "id": "voz-rendicion-cuentas",
+   "area": "global",
+   "name": {
+    "es": "Voz y rendición de cuentas (WGI)",
+    "en": "Voice and Accountability (WGI)"
+   },
+   "description": {
+    "es": "Participación ciudadana, libertad de expresión y de prensa; escala aproximada de −2,5 a +2,5.",
+    "en": "Citizen participation, freedom of expression and press; approximate scale from −2.5 to +2.5."
+   },
+   "unit": {
+    "es": "puntaje (−2,5 a 2,5)",
+    "en": "score (−2.5 to 2.5)"
+   },
+   "decimals": 2,
+   "frequency": "A",
+   "featured": false,
+   "source": "worldbank",
+   "code": "GOV_WGI_VA.EST",
+   "updatedAt": "2026-11-07T17:41:43.928Z",
+   "last": [
+    "2025-01-01",
+    1.0353151
+   ],
+   "previous": [
+    "2024-01-01",
+    1.0174547
+   ],
+   "spark": [
+    1.2808384,
+    1.2919239,
+    1.180389,
+    1.2077884,
+    1.1790103,
+    1.104673,
+    1.0891833,
+    1.0964034,
+    1.105745,
+    1.0813879,
+    1.0883483,
+    1.0820717,
+    1.0784428,
+    1.0282657,
+    1.0427331,
+    0.9991393,
+    1.0191262,
+    1.0355912,
+    1.0174547,
+    1.0353151
+   ],
+   "hasCompare": false,
+   "stale": false
+  },
+  {
+   "id": "gasto-id",
+   "area": "global",
+   "name": {
+    "es": "Gasto en investigación y desarrollo",
+    "en": "Research & development expenditure"
+   },
+   "description": {
+    "es": "Gasto total en I+D como porcentaje del PIB.",
+    "en": "Total R&D expenditure as a share of GDP."
+   },
+   "unit": {
+    "es": "% del PIB",
+    "en": "% of GDP"
+   },
+   "decimals": 2,
+   "frequency": "A",
+   "featured": false,
+   "compare": [
+    {
+     "code": "OED",
+     "label": {
+      "es": "Promedio OCDE",
+      "en": "OECD average"
+     }
+    },
+    {
+     "code": "LCN",
+     "label": {
+      "es": "América Latina y el Caribe",
+      "en": "Latin America & Caribbean"
+     }
+    }
+   ],
+   "source": "worldbank",
+   "code": "GB.XPD.RSDV.GD.ZS",
+   "updatedAt": "2026-11-07T17:41:44.282Z",
+   "last": [
+    "2022-01-01",
+    0.39205
+   ],
+   "previous": [
+    "2021-01-01",
+    0.36063
+   ],
+   "spark": [
+    0.31143,
+    0.37492,
+    0.35403,
+    0.33165,
+    0.35288,
+    0.36213,
+    0.39031,
+    0.37668,
+    0.38296,
+    0.37103,
+    0.35679,
+    0.36916,
+    0.34243,
+    0.33525,
+    0.36063,
+    0.39205
+   ],
+   "hasCompare": true,
+   "stale": false
+  },
+  {
+   "id": "gasto-educacion",
+   "area": "global",
+   "name": {
+    "es": "Gasto público en educación",
+    "en": "Public spending on education"
+   },
+   "description": {
+    "es": "Gasto del gobierno en educación como porcentaje del PIB.",
+    "en": "Government spending on education as a share of GDP."
+   },
+   "unit": {
+    "es": "% del PIB",
+    "en": "% of GDP"
+   },
+   "decimals": 2,
+   "frequency": "A",
+   "featured": false,
+   "compare": [
+    {
+     "code": "OED",
+     "label": {
+      "es": "Promedio OCDE",
+      "en": "OECD average"
+     }
+    },
+    {
+     "code": "LCN",
+     "label": {
+      "es": "América Latina y el Caribe",
+      "en": "Latin America & Caribbean"
+     }
+    }
+   ],
+   "source": "worldbank",
+   "code": "SE.XPD.TOTL.GD.ZS",
+   "updatedAt": "2026-11-07T17:42:36.855Z",
+   "last": [
+    "2022-01-01",
+    4.91201019287109
+   ],
+   "previous": [
+    "2021-01-01",
+    5.00225019454956
+   ],
+   "spark": [
+    4.04881000518799,
+    3.91868996620178,
+    3.54307007789612,
+    3.28016996383667,
+    3.04014992713928,
+    3.2331600189209,
+    3.79189991950989,
+    4.25475978851318,
+    4.18953990936279,
+    4.06173992156982,
+    4.54814004898071,
+    4.75168991088867,
+    4.90390014648438,
+    5.36645984649658,
+    5.43278980255127,
+    5.473060131073,
+    5.62629985809326,
+    5.62992000579834,
+    5.00225019454956,
+    4.91201019287109
+   ],
+   "hasCompare": true,
+   "stale": false
+  },
+  {
+   "id": "gasto-salud",
+   "area": "global",
+   "name": {
+    "es": "Gasto en salud",
+    "en": "Health expenditure"
+   },
+   "description": {
+    "es": "Gasto corriente total en salud (público y privado) como porcentaje del PIB.",
+    "en": "Total current health expenditure (public and private) as a share of GDP."
+   },
+   "unit": {
+    "es": "% del PIB",
+    "en": "% of GDP"
+   },
+   "decimals": 2,
+   "frequency": "A",
+   "featured": false,
+   "compare": [
+    {
+     "code": "OED",
+     "label": {
+      "es": "Promedio OCDE",
+      "en": "OECD average"
+     }
+    },
+    {
+     "code": "LCN",
+     "label": {
+      "es": "América Latina y el Caribe",
+      "en": "Latin America & Caribbean"
+     }
+    }
+   ],
+   "source": "worldbank",
+   "code": "SH.XPD.CHEX.GD.ZS",
+   "updatedAt": "2026-11-07T17:42:37.198Z",
+   "last": [
+    "2024-01-01",
+    10.53092575
+   ],
+   "previous": [
+    "2023-01-01",
+    10.17470455
+   ],
+   "spark": [
+    6.62372065,
+    6.07235622,
+    6.21259642,
+    6.73954487,
+    7.25026846,
+    6.81958389,
+    6.79947519,
+    7.01951265,
+    7.47552681,
+    7.84150171,
+    8.3513937,
+    8.55767059,
+    9.090518,
+    9.15040398,
+    9.30968475,
+    9.69734573,
+    9.72450161,
+    10.0053072,
+    10.17470455,
+    10.53092575
+   ],
+   "hasCompare": true,
+   "stale": false
+  },
+  {
+   "id": "emisiones-co2",
+   "area": "global",
+   "name": {
+    "es": "Emisiones de CO₂ per cápita",
+    "en": "CO₂ emissions per capita"
+   },
+   "description": {
+    "es": "Emisiones de dióxido de carbono por habitante, excluyendo uso de suelo y silvicultura (LULUCF).",
+    "en": "Carbon dioxide emissions per person, excluding land use and forestry (LULUCF)."
+   },
+   "unit": {
+    "es": "toneladas de CO₂ por persona",
+    "en": "tonnes of CO₂ per person"
+   },
+   "decimals": 2,
+   "frequency": "A",
+   "featured": false,
+   "compare": [
+    {
+     "code": "OED",
+     "label": {
+      "es": "Promedio OCDE",
+      "en": "OECD average"
+     }
+    },
+    {
+     "code": "LCN",
+     "label": {
+      "es": "América Latina y el Caribe",
+      "en": "Latin America & Caribbean"
+     }
+    }
+   ],
+   "source": "worldbank",
+   "code": "EN.GHG.CO2.PC.CE.AR5",
+   "updatedAt": "2026-11-07T17:42:37.486Z",
+   "last": [
+    "2024-01-01",
+    3.93744000373189
+   ],
+   "previous": [
+    "2023-01-01",
+    3.91719041336885
+   ],
+   "spark": [
+    3.6175914799259,
+    3.65616252034094,
+    4.06392771027535,
+    4.23564646521513,
+    4.01098641712794,
+    4.2093619030369,
+    4.55717718537356,
+    4.64341271955513,
+    4.82901967693119,
+    4.4057176939683,
+    4.67539634716479,
+    4.86474105721938,
+    4.83609776199712,
+    4.75406192633103,
+    4.96139546396702,
+    4.51770681212954,
+    4.57991726498939,
+    4.62474983424569,
+    3.91719041336885,
+    3.93744000373189
+   ],
+   "hasCompare": true,
+   "stale": false
+  }
+ ]
+}

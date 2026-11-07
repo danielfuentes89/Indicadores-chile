@@ -1,0 +1,120 @@
+name: Datos y sitio
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # Horas en UTC. Chile continental: UTC-3 (verano) / UTC-4 (invierno).
+    - cron: '17 11 * * *' # ~08:17 / 07:17 en Chile: IPC, Imacec y publicaciones de la mañana
+    - cron: '47 23 * * *' # ~20:47 / 19:47 en Chile: dólar observado y UF publicados en la tarde
+  workflow_dispatch:
+    inputs:
+      full:
+        description: Descargar toda la historia (ignora los datos guardados)
+        type: boolean
+        default: false
+      only:
+        description: IDs de indicadores separados por coma (opcional)
+        type: string
+        default: ''
+
+permissions:
+  contents: write
+  issues: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: datos-y-sitio
+  cancel-in-progress: false
+
+jobs:
+  update-data:
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm test
+
+      - name: Descargar indicadores
+        env:
+          BCCH_USER: ${{ secrets.BCCH_USER }}
+          BCCH_PASS: ${{ secrets.BCCH_PASS }}
+          CMF_API_KEY: ${{ secrets.CMF_API_KEY }}
+          FULL: ${{ inputs.full }}
+          ONLY: ${{ inputs.only }}
+        run: |
+          args=()
+          if [ "$FULL" = "true" ]; then args+=(--full); fi
+          if [ -n "$ONLY" ]; then args+=(--only "$ONLY"); fi
+          npm run fetch -- "${args[@]}"
+          cat pipeline-report.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Guardar datos nuevos
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data
+          if git diff --cached --quiet; then
+            echo "Sin cambios en los datos."
+          else
+            git commit -m "datos: actualización automática $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push
+          fi
+
+      - name: Abrir o actualizar issue si hay indicadores sin actualizar
+        if: always() && hashFiles('pipeline-report.md') != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          title="Fallas en la actualización automática de datos"
+          existing=$(gh issue list --state open --search "in:title \"$title\"" --json number --jq '.[0].number // empty')
+          if grep -q "Indicadores sin actualizar" pipeline-report.md; then
+            { cat pipeline-report.md; echo; echo "Última ejecución: $RUN_URL"; echo; echo "_Este issue se actualiza solo y se cierra cuando todo vuelve a funcionar._"; } > issue.md
+            if [ -n "$existing" ]; then
+              gh issue edit "$existing" --body-file issue.md
+            else
+              gh issue create --title "$title" --body-file issue.md
+            fi
+          elif [ -n "$existing" ]; then
+            gh issue close "$existing" --comment "Todos los indicadores se actualizaron correctamente en $RUN_URL"
+          fi
+
+  deploy:
+    needs: update-data
+    # Corre en push a main (update-data se omite) o después de actualizar los datos.
+    if: always() && (needs.update-data.result == 'success' || needs.update-data.result == 'skipped')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Toma la punta de la rama, incluido el commit de datos recién creado.
+          ref: ${{ github.ref_name }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - id: pages
+        uses: actions/configure-pages@v5
+      - name: Construir sitio
+        env:
+          SITE_URL: ${{ steps.pages.outputs.origin }}
+          BASE_PATH: ${{ steps.pages.outputs.base_path }}/
+        run: npm run build
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - id: deployment
+        uses: actions/deploy-pages@v4

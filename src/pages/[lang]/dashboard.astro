@@ -1,0 +1,21 @@
+---
+import Dashboard from '../../components/Dashboard.tsx';
+import { LANGS, t, type Lang } from '../../i18n/ui.ts';
+import Base from '../../layouts/Base.astro';
+import { getCatalog } from '../../lib/data.ts';
+
+export function getStaticPaths() {
+  return LANGS.map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Lang;
+const catalog = await getCatalog();
+// Al cliente se envía solo lo necesario (sin sparklines).
+const indicators = catalog.indicators.map(({ spark: _s, ...rest }) => rest);
+---
+
+<Base lang={lang} title={t(lang, 'dash.title')} path="dashboard">
+  <h1>{t(lang, 'dash.title')}</h1>
+  <p class="lead">{t(lang, 'dash.intro')}</p>
+  <Dashboard client:load indicators={indicators} areas={catalog.areas} lang={lang} base={import.meta.env.BASE_URL} />
+</Base>

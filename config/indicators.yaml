@@ -1,0 +1,512 @@
+# Registro de indicadores: única fuente de verdad del sitio.
+#
+# Para agregar un indicador basta con añadir una entrada en `indicators`.
+# `providers` se prueba en orden: se usa el primero que esté configurado (credenciales)
+# y responda bien. Todos los proveedores de un indicador deben medir exactamente lo mismo.
+#
+# Códigos BDE verificados en las páginas públicas de la Base de Datos Estadísticos
+# del Banco Central (si3.bcentral.cl/Siete), noviembre de 2026.
+
+areas:
+  - id: economia
+    name: { es: Economía y finanzas, en: Economy & finance }
+    description:
+      es: Tipo de cambio, unidades reajustables, inflación, actividad, empleo y materias primas.
+      en: Exchange rates, indexed units, inflation, activity, employment and commodities.
+  - id: global
+    name: { es: Chile en el mundo, en: Chile in the world }
+    description:
+      es: Indicadores internacionales comparables (Banco Mundial, FMI) frente a la OCDE y América Latina.
+      en: Internationally comparable indicators (World Bank, IMF) versus the OECD and Latin America.
+  - id: fiscal
+    status: planned
+    name: { es: Fiscal y transparencia, en: Public finance & transparency }
+    description:
+      es: Ejecución presupuestaria (DIPRES), compras públicas (ChileCompra), lobby y probidad (CPLT).
+      en: Budget execution (DIPRES), public procurement (ChileCompra), lobbying and asset declarations (CPLT).
+  - id: social
+    status: planned
+    name: { es: Social y territorial, en: Social & regional }
+    description:
+      es: Pobreza (CASEN), salud (DEIS), educación (Mineduc), seguridad (CEAD) y datos por región y comuna.
+      en: Poverty (CASEN), health (DEIS), education (Mineduc), public safety (CEAD) and regional data.
+
+sources:
+  bcch:
+    name: { es: Banco Central de Chile – Base de Datos Estadísticos, en: Central Bank of Chile – Statistical Database }
+    url: https://si3.bcentral.cl/siete
+    license: { es: "Fuente: Banco Central de Chile. Uso libre citando la fuente.", en: "Source: Central Bank of Chile. Free use with attribution." }
+    auth: apikey
+    official: true
+  cmf:
+    name: { es: Comisión para el Mercado Financiero (CMF), en: Financial Market Commission (CMF) }
+    url: https://api.cmfchile.cl
+    license: { es: "Fuente: CMF Chile.", en: "Source: CMF Chile." }
+    auth: apikey
+    official: true
+  mindicador:
+    name: { es: "mindicador.cl (respaldo, replica datos del Banco Central)", en: "mindicador.cl (fallback, mirrors Central Bank data)" }
+    url: https://mindicador.cl
+    license: { es: "Servicio no oficial; datos originales del Banco Central de Chile.", en: "Unofficial service; original data from the Central Bank of Chile." }
+    auth: none
+    official: false
+  worldbank:
+    name: { es: Banco Mundial – World Development Indicators y WGI, en: World Bank – World Development Indicators & WGI }
+    url: https://data.worldbank.org/country/chile
+    license: { es: "CC BY 4.0, Banco Mundial.", en: "CC BY 4.0, World Bank." }
+    auth: none
+    official: true
+  imf:
+    name: { es: FMI – World Economic Outlook (DataMapper), en: IMF – World Economic Outlook (DataMapper) }
+    url: https://www.imf.org/external/datamapper/profile/CHL
+    license: { es: "Fuente: Fondo Monetario Internacional, WEO.", en: "Source: International Monetary Fund, WEO." }
+    auth: none
+    official: true
+
+indicators:
+  # ───────────────────────── Economía y finanzas ─────────────────────────
+  - id: dolar-observado
+    area: economia
+    featured: true
+    name: { es: Dólar observado, en: US dollar (observed rate) }
+    short: { es: Dólar, en: USD }
+    description:
+      es: Tipo de cambio peso/dólar publicado por el Banco Central, calculado con las transacciones del día hábil anterior.
+      en: Peso/dollar exchange rate published by the Central Bank, based on the previous business day's transactions.
+    unit: { es: pesos por dólar, en: pesos per USD }
+    frequency: D
+    providers:
+      - { source: bcch, code: F073.TCO.PRE.Z.D }
+      - { source: cmf, code: dolar }
+      - { source: mindicador, code: dolar }
+
+  - id: euro
+    area: economia
+    name: { es: Euro, en: Euro }
+    description:
+      es: Tipo de cambio peso/euro publicado por el Banco Central.
+      en: Peso/euro exchange rate published by the Central Bank.
+    unit: { es: pesos por euro, en: pesos per EUR }
+    frequency: D
+    providers:
+      - { source: bcch, code: F072.CLP.EUR.N.O.D }
+      - { source: cmf, code: euro }
+      - { source: mindicador, code: euro }
+
+  - id: uf
+    area: economia
+    featured: true
+    name: { es: Unidad de Fomento (UF), en: Unidad de Fomento (UF) }
+    short: { es: UF, en: UF }
+    description:
+      es: Unidad de cuenta reajustable según la inflación, usada en créditos hipotecarios, arriendos y contratos.
+      en: Inflation-indexed unit of account used in mortgages, rents and contracts.
+    unit: { es: pesos, en: pesos }
+    frequency: D
+    providers:
+      - { source: bcch, code: F073.UFF.PRE.Z.D }
+      - { source: cmf, code: uf }
+      - { source: mindicador, code: uf }
+
+  - id: utm
+    area: economia
+    name: { es: Unidad Tributaria Mensual (UTM), en: Monthly Tax Unit (UTM) }
+    description:
+      es: Unidad usada para fijar impuestos, multas y aranceles; se reajusta mensualmente según el IPC.
+      en: Unit used to set taxes, fines and fees; adjusted monthly by CPI.
+    unit: { es: pesos, en: pesos }
+    decimals: 0
+    frequency: M
+    providers:
+      - { source: bcch, code: F073.UTR.PRE.Z.M }
+      - { source: cmf, code: utm }
+      - { source: mindicador, code: utm }
+
+  - id: tpm
+    area: economia
+    featured: true
+    name: { es: Tasa de Política Monetaria (TPM), en: Monetary Policy Rate }
+    short: { es: TPM, en: Policy rate }
+    description:
+      es: Tasa de interés que fija el Consejo del Banco Central para conducir la política monetaria.
+      en: Interest rate set by the Central Bank Board to conduct monetary policy.
+    unit: { es: "% anual", en: "% per year" }
+    frequency: D
+    providers:
+      - { source: bcch, code: F022.TPM.TIN.D001.NO.Z.D }
+      - { source: mindicador, code: tpm }
+
+  - id: ipc-anual
+    area: economia
+    featured: true
+    name: { es: "Inflación (IPC, variación 12 meses)", en: "Inflation (CPI, 12-month change)" }
+    short: { es: Inflación 12m, en: Inflation 12m }
+    description:
+      es: Variación del Índice de Precios al Consumidor respecto del mismo mes del año anterior (serie empalmada por el Banco Central).
+      en: Change in the Consumer Price Index versus the same month a year earlier (series spliced by the Central Bank).
+    unit: { es: "%", en: "%" }
+    decimals: 1
+    frequency: M
+    providers:
+      - { source: bcch, code: G073.IPC.V12.2023.M }
+
+  - id: ipc-mensual
+    area: economia
+    name: { es: "IPC, variación mensual", en: "CPI, monthly change" }
+    description:
+      es: Variación mensual del Índice de Precios al Consumidor publicada por el INE.
+      en: Monthly change in the Consumer Price Index published by INE.
+    unit: { es: "%", en: "%" }
+    decimals: 1
+    frequency: M
+    providers:
+      - { source: bcch, code: F074.IPC.VAR.Z.Z.C.M }
+      - { source: cmf, code: ipc }
+      - { source: mindicador, code: ipc }
+
+  - id: expectativa-inflacion
+    area: economia
+    name: { es: Expectativa de inflación a 12 meses (EEE), en: 12-month inflation expectations (EEE) }
+    description:
+      es: Mediana de la Encuesta de Expectativas Económicas del Banco Central para la inflación en 11 meses más (variación 12 meses).
+      en: Median of the Central Bank's Economic Expectations Survey for inflation 11 months ahead (12-month change).
+    unit: { es: "%", en: "%" }
+    decimals: 1
+    frequency: M
+    start: '2010-01-01'
+    providers:
+      - { source: bcch, code: F089.IPC.V12.14.M }
+
+  - id: imacec
+    area: economia
+    featured: true
+    name: { es: Imacec (variación anual), en: Imacec (year-on-year change) }
+    short: { es: Imacec, en: Imacec }
+    description:
+      es: Indicador mensual de actividad económica, aproximación mensual del PIB. Variación respecto del mismo mes del año anterior.
+      en: Monthly economic activity index, a monthly proxy for GDP. Change versus the same month a year earlier.
+    unit: { es: "%", en: "%" }
+    decimals: 1
+    frequency: M
+    providers:
+      - { source: bcch, code: F032.IMC.IND.Z.Z.EP18.Z.Z.0.M, derive: yoy }
+      - { source: mindicador, code: imacec }
+
+  - id: imacec-no-minero
+    area: economia
+    name: { es: Imacec no minero (variación anual), en: Non-mining Imacec (year-on-year change) }
+    description:
+      es: Actividad económica excluyendo la minería, variación respecto del mismo mes del año anterior.
+      en: Economic activity excluding mining, change versus the same month a year earlier.
+    unit: { es: "%", en: "%" }
+    decimals: 1
+    frequency: M
+    providers:
+      - { source: bcch, code: F032.IMC.IND.Z.Z.EP18.N03.Z.0.M, derive: yoy }
+
+  - id: pib
+    area: economia
+    name: { es: PIB (variación anual), en: GDP (year-on-year change) }
+    description:
+      es: Producto Interno Bruto trimestral en volumen (precios del año anterior encadenados), variación respecto del mismo trimestre del año anterior.
+      en: Quarterly real Gross Domestic Product (chained previous-year prices), change versus the same quarter a year earlier.
+    unit: { es: "%", en: "%" }
+    decimals: 1
+    frequency: Q
+    start: '1996-01-01'
+    providers:
+      - { source: bcch, code: F032.PIB.FLU.R.CLP.EP18.Z.Z.0.T, derive: yoy }
+
+  - id: desempleo
+    area: economia
+    featured: true
+    name: { es: Tasa de desempleo, en: Unemployment rate }
+    short: { es: Desempleo, en: Unemployment }
+    description:
+      es: Tasa de desocupación nacional de la Encuesta Nacional de Empleo del INE (trimestre móvil terminado en el mes indicado).
+      en: National unemployment rate from INE's National Employment Survey (rolling quarter ending in the month shown).
+    unit: { es: "%", en: "%" }
+    decimals: 1
+    frequency: M
+    start: '2010-01-01'
+    providers:
+      - { source: bcch, code: F049.DES.TAS.INE9.10.M }
+      - { source: mindicador, code: tasa_desempleo }
+
+  - id: cobre
+    area: economia
+    featured: true
+    name: { es: Precio del cobre, en: Copper price }
+    short: { es: Cobre, en: Copper }
+    description:
+      es: Precio del cobre refinado en la Bolsa de Metales de Londres (BML).
+      en: Price of refined copper on the London Metal Exchange (LME).
+    unit: { es: dólares por libra, en: USD per pound }
+    frequency: D
+    providers:
+      - { source: bcch, code: F019.PPB.PRE.100.D }
+      - { source: mindicador, code: libra_cobre }
+
+  - id: litio
+    area: economia
+    name: { es: Precio del litio, en: Lithium price }
+    description:
+      es: Precio internacional del litio informado por el Banco Central.
+      en: International lithium price reported by the Central Bank.
+    unit: { es: dólares por kilo, en: USD per kg }
+    frequency: D
+    start: '2015-01-01'
+    providers:
+      - { source: bcch, code: F019.PPB.PRE.37.D }
+
+  - id: petroleo-wti
+    area: economia
+    name: { es: Petróleo WTI, en: WTI crude oil }
+    description:
+      es: Precio del barril de petróleo West Texas Intermediate.
+      en: Price per barrel of West Texas Intermediate crude oil.
+    unit: { es: dólares por barril, en: USD per barrel }
+    frequency: D
+    providers:
+      - { source: bcch, code: F019.PPB.PRE.41B.D }
+
+  - id: balanza-comercial
+    area: economia
+    name: { es: Saldo de la balanza comercial, en: Trade balance }
+    description:
+      es: Exportaciones menos importaciones de bienes, según la balanza de pagos del Banco Central.
+      en: Goods exports minus imports, from the Central Bank's balance of payments.
+    unit: { es: millones de dólares, en: USD millions }
+    decimals: 1
+    frequency: M
+    start: '2003-01-01'
+    providers:
+      - { source: bcch, code: F068.B1.VAR.T0.0.S.N.Z.Z.Z.Z.6.0.M }
+
+  # ───────────────────────── Chile en el mundo ─────────────────────────
+  - id: pib-per-capita-ppa
+    area: global
+    featured: true
+    name: { es: PIB per cápita (PPA), en: GDP per capita (PPP) }
+    short: { es: PIB per cápita PPA, en: GDP per capita PPP }
+    description:
+      es: Producto por habitante a paridad de poder adquisitivo, en dólares internacionales corrientes.
+      en: Output per person at purchasing power parity, in current international dollars.
+    unit: { es: dólares internacionales, en: international dollars }
+    decimals: 0
+    frequency: A
+    start: '1990-01-01'
+    providers:
+      - { source: worldbank, code: NY.GDP.PCAP.PP.CD }
+    compare:
+      - { code: OED, label: { es: Promedio OCDE, en: OECD average } }
+      - { code: LCN, label: { es: América Latina y el Caribe, en: Latin America & Caribbean } }
+
+  - id: crecimiento-fmi
+    area: global
+    featured: true
+    name: { es: Crecimiento del PIB real (FMI), en: Real GDP growth (IMF) }
+    short: { es: Crecimiento PIB (FMI), en: GDP growth (IMF) }
+    description:
+      es: Variación anual del PIB real según el World Economic Outlook del FMI, incluidas sus proyecciones.
+      en: Annual real GDP growth from the IMF World Economic Outlook, including its projections.
+    unit: { es: "%", en: "%" }
+    decimals: 1
+    frequency: A
+    start: '1990-01-01'
+    providers:
+      - { source: imf, code: NGDP_RPCH }
+    compare:
+      - { code: WEOWORLD, label: { es: Mundo, en: World } }
+      - { code: ADVEC, label: { es: Economías avanzadas, en: Advanced economies } }
+      - { code: SMQ, label: { es: América del Sur, en: South America } }
+
+  - id: inflacion-fmi
+    area: global
+    name: { es: Inflación promedio anual (FMI), en: Average annual inflation (IMF) }
+    description:
+      es: Variación promedio anual de los precios al consumidor según el FMI, incluidas proyecciones.
+      en: Average annual consumer price change per the IMF, including projections.
+    unit: { es: "%", en: "%" }
+    decimals: 1
+    frequency: A
+    start: '1990-01-01'
+    providers:
+      - { source: imf, code: PCPIPCH }
+    compare:
+      - { code: WEOWORLD, label: { es: Mundo, en: World } }
+      - { code: ADVEC, label: { es: Economías avanzadas, en: Advanced economies } }
+      - { code: SMQ, label: { es: América del Sur, en: South America } }
+
+  - id: desempleo-fmi
+    area: global
+    name: { es: Desempleo (FMI), en: Unemployment (IMF) }
+    description:
+      es: Tasa de desempleo anual según el FMI, incluidas proyecciones.
+      en: Annual unemployment rate per the IMF, including projections.
+    unit: { es: "%", en: "%" }
+    decimals: 1
+    frequency: A
+    start: '1990-01-01'
+    providers:
+      - { source: imf, code: LUR }
+    compare:
+      - { code: ADVEC, label: { es: Economías avanzadas, en: Advanced economies } }
+
+  - id: deuda-publica
+    area: global
+    featured: true
+    name: { es: Deuda bruta del gobierno general (FMI), en: General government gross debt (IMF) }
+    short: { es: Deuda pública, en: Public debt }
+    description:
+      es: Deuda bruta del gobierno general como porcentaje del PIB, según el FMI, incluidas proyecciones.
+      en: General government gross debt as a share of GDP, per the IMF, including projections.
+    unit: { es: "% del PIB", en: "% of GDP" }
+    decimals: 1
+    frequency: A
+    start: '1990-01-01'
+    providers:
+      - { source: imf, code: GGXWDG_NGDP }
+    compare:
+      - { code: ADVEC, label: { es: Economías avanzadas, en: Advanced economies } }
+      - { code: OEMDC, label: { es: Emergentes y en desarrollo, en: Emerging & developing } }
+      - { code: SMQ, label: { es: América del Sur, en: South America } }
+
+  - id: gini
+    area: global
+    name: { es: Índice de Gini, en: Gini index }
+    description:
+      es: Desigualdad de ingresos (0 = igualdad perfecta, 100 = máxima desigualdad), estimación del Banco Mundial a partir de la CASEN.
+      en: Income inequality (0 = perfect equality, 100 = maximum inequality), World Bank estimate based on CASEN.
+    unit: { es: puntos (0–100), en: points (0–100) }
+    decimals: 1
+    frequency: A
+    start: '1987-01-01'
+    providers:
+      - { source: worldbank, code: SI.POV.GINI }
+
+  - id: esperanza-de-vida
+    area: global
+    name: { es: Esperanza de vida al nacer, en: Life expectancy at birth }
+    description:
+      es: Años que viviría un recién nacido si se mantuvieran los patrones de mortalidad del momento.
+      en: Years a newborn would live if current mortality patterns held.
+    unit: { es: años, en: years }
+    decimals: 1
+    frequency: A
+    start: '1990-01-01'
+    providers:
+      - { source: worldbank, code: SP.DYN.LE00.IN }
+    compare:
+      - { code: OED, label: { es: Promedio OCDE, en: OECD average } }
+      - { code: LCN, label: { es: América Latina y el Caribe, en: Latin America & Caribbean } }
+
+  - id: control-corrupcion
+    area: global
+    featured: true
+    name: { es: Control de la corrupción (WGI), en: Control of Corruption (WGI) }
+    short: { es: Control corrupción, en: Control of corruption }
+    description:
+      es: Indicador de Gobernanza Mundial del Banco Mundial; escala aproximada de −2,5 (débil) a +2,5 (fuerte).
+      en: World Bank Worldwide Governance Indicator; approximate scale from −2.5 (weak) to +2.5 (strong).
+    unit: { es: "puntaje (−2,5 a 2,5)", en: "score (−2.5 to 2.5)" }
+    frequency: A
+    start: '1996-01-01'
+    providers:
+      - { source: worldbank, code: GOV_WGI_CC.EST, params: { source: '3' } }
+
+  - id: estado-de-derecho
+    area: global
+    name: { es: Estado de derecho (WGI), en: Rule of Law (WGI) }
+    description:
+      es: Indicador de Gobernanza Mundial del Banco Mundial; escala aproximada de −2,5 a +2,5.
+      en: World Bank Worldwide Governance Indicator; approximate scale from −2.5 to +2.5.
+    unit: { es: "puntaje (−2,5 a 2,5)", en: "score (−2.5 to 2.5)" }
+    frequency: A
+    start: '1996-01-01'
+    providers:
+      - { source: worldbank, code: GOV_WGI_RL.EST, params: { source: '3' } }
+
+  - id: efectividad-gobierno
+    area: global
+    name: { es: Efectividad del gobierno (WGI), en: Government Effectiveness (WGI) }
+    description:
+      es: Calidad de los servicios públicos y de la formulación de políticas; escala aproximada de −2,5 a +2,5.
+      en: Quality of public services and policy formulation; approximate scale from −2.5 to +2.5.
+    unit: { es: "puntaje (−2,5 a 2,5)", en: "score (−2.5 to 2.5)" }
+    frequency: A
+    start: '1996-01-01'
+    providers:
+      - { source: worldbank, code: GOV_WGI_GE.EST, params: { source: '3' } }
+
+  - id: voz-rendicion-cuentas
+    area: global
+    name: { es: Voz y rendición de cuentas (WGI), en: Voice and Accountability (WGI) }
+    description:
+      es: Participación ciudadana, libertad de expresión y de prensa; escala aproximada de −2,5 a +2,5.
+      en: Citizen participation, freedom of expression and press; approximate scale from −2.5 to +2.5.
+    unit: { es: "puntaje (−2,5 a 2,5)", en: "score (−2.5 to 2.5)" }
+    frequency: A
+    start: '1996-01-01'
+    providers:
+      - { source: worldbank, code: GOV_WGI_VA.EST, params: { source: '3' } }
+
+  - id: gasto-id
+    area: global
+    name: { es: Gasto en investigación y desarrollo, en: Research & development expenditure }
+    description:
+      es: Gasto total en I+D como porcentaje del PIB.
+      en: Total R&D expenditure as a share of GDP.
+    unit: { es: "% del PIB", en: "% of GDP" }
+    frequency: A
+    start: '1996-01-01'
+    providers:
+      - { source: worldbank, code: GB.XPD.RSDV.GD.ZS }
+    compare:
+      - { code: OED, label: { es: Promedio OCDE, en: OECD average } }
+      - { code: LCN, label: { es: América Latina y el Caribe, en: Latin America & Caribbean } }
+
+  - id: gasto-educacion
+    area: global
+    name: { es: Gasto público en educación, en: Public spending on education }
+    description:
+      es: Gasto del gobierno en educación como porcentaje del PIB.
+      en: Government spending on education as a share of GDP.
+    unit: { es: "% del PIB", en: "% of GDP" }
+    frequency: A
+    start: '1990-01-01'
+    providers:
+      - { source: worldbank, code: SE.XPD.TOTL.GD.ZS }
+    compare:
+      - { code: OED, label: { es: Promedio OCDE, en: OECD average } }
+      - { code: LCN, label: { es: América Latina y el Caribe, en: Latin America & Caribbean } }
+
+  - id: gasto-salud
+    area: global
+    name: { es: Gasto en salud, en: Health expenditure }
+    description:
+      es: Gasto corriente total en salud (público y privado) como porcentaje del PIB.
+      en: Total current health expenditure (public and private) as a share of GDP.
+    unit: { es: "% del PIB", en: "% of GDP" }
+    frequency: A
+    start: '2000-01-01'
+    providers:
+      - { source: worldbank, code: SH.XPD.CHEX.GD.ZS }
+    compare:
+      - { code: OED, label: { es: Promedio OCDE, en: OECD average } }
+      - { code: LCN, label: { es: América Latina y el Caribe, en: Latin America & Caribbean } }
+
+  - id: emisiones-co2
+    area: global
+    name: { es: Emisiones de CO₂ per cápita, en: CO₂ emissions per capita }
+    description:
+      es: Emisiones de dióxido de carbono por habitante, excluyendo uso de suelo y silvicultura (LULUCF).
+      en: Carbon dioxide emissions per person, excluding land use and forestry (LULUCF).
+    unit: { es: toneladas de CO₂ por persona, en: tonnes of CO₂ per person }
+    frequency: A
+    start: '1990-01-01'
+    providers:
+      - { source: worldbank, code: EN.GHG.CO2.PC.CE.AR5 }
+    compare:
+      - { code: OED, label: { es: Promedio OCDE, en: OECD average } }
+      - { code: LCN, label: { es: América Latina y el Caribe, en: Latin America & Caribbean } }

@@ -1,0 +1,333 @@
+{
+ "generatedAt": "2026-11-07T17:42:37.495Z",
+ "today": "2026-11-07",
+ "results": [
+  {
+   "id": "dolar-observado",
+   "ok": true,
+   "source": "mindicador",
+   "attempts": [
+    {
+     "source": "bcch",
+     "error": "omitida: faltan BCCH_USER / BCCH_PASS"
+    },
+    {
+     "source": "cmf",
+     "error": "omitida: falta CMF_API_KEY"
+    }
+   ],
+   "lastDate": "2026-11-09",
+   "count": 6692
+  },
+  {
+   "id": "euro",
+   "ok": true,
+   "source": "mindicador",
+   "attempts": [
+    {
+     "source": "bcch",
+     "error": "omitida: faltan BCCH_USER / BCCH_PASS"
+    },
+    {
+     "source": "cmf",
+     "error": "omitida: falta CMF_API_KEY"
+    }
+   ],
+   "lastDate": "2026-11-09",
+   "count": 6692
+  },
+  {
+   "id": "uf",
+   "ok": true,
+   "source": "mindicador",
+   "attempts": [
+    {
+     "source": "bcch",
+     "error": "omitida: faltan BCCH_USER / BCCH_PASS"
+    },
+    {
+     "source": "cmf",
+     "error": "omitida: falta CMF_API_KEY"
+    }
+   ],
+   "lastDate": "2026-11-09",
+   "count": 9808
+  },
+  {
+   "id": "utm",
+   "ok": true,
+   "source": "mindicador",
+   "attempts": [
+    {
+     "source": "bcch",
+     "error": "omitida: faltan BCCH_USER / BCCH_PASS"
+    },
+    {
+     "source": "cmf",
+     "error": "omitida: falta CMF_API_KEY"
+    }
+   ],
+   "lastDate": "2026-11-01",
+   "count": 323
+  },
+  {
+   "id": "tpm",
+   "ok": true,
+   "source": "mindicador",
+   "attempts": [
+    {
+     "source": "bcch",
+     "error": "omitida: faltan BCCH_USER / BCCH_PASS"
+    }
+   ],
+   "lastDate": "2026-11-09",
+   "count": 6265
+  },
+  {
+   "id": "ipc-anual",
+   "ok": false,
+   "attempts": [
+    {
+     "source": "bcch",
+     "error": "omitida: faltan BCCH_USER / BCCH_PASS"
+    }
+   ]
+  },
+  {
+   "id": "ipc-mensual",
+   "ok": true,
+   "source": "mindicador",
+   "attempts": [
+    {
+     "source": "bcch",
+     "error": "omitida: faltan BCCH_USER / BCCH_PASS"
+    },
+    {
+     "source": "cmf",
+     "error": "omitida: falta CMF_API_KEY"
+    }
+   ],
+   "lastDate": "2025-12-01",
+   "count": 312
+  },
+  {
+   "id": "expectativa-inflacion",
+   "ok": false,
+   "attempts": [
+    {
+     "source": "bcch",
+     "error": "omitida: faltan BCCH_USER / BCCH_PASS"
+    }
+   ]
+  },
+  {
+   "id": "imacec",
+   "ok": true,
+   "source": "mindicador",
+   "attempts": [
+    {
+     "source": "bcch",
+     "error": "omitida: faltan BCCH_USER / BCCH_PASS"
+    }
+   ],
+   "lastDate": "2026-09-01",
+   "count": 321
+  },
+  {
+   "id": "imacec-no-minero",
+   "ok": false,
+   "attempts": [
+    {
+     "source": "bcch",
+     "error": "omitida: faltan BCCH_USER / BCCH_PASS"
+    }
+   ]
+  },
+  {
+   "id": "pib",
+   "ok": false,
+   "attempts": [
+    {
+     "source": "bcch",
+     "error": "omitida: faltan BCCH_USER / BCCH_PASS"
+    }
+   ]
+  },
+  {
+   "id": "desempleo",
+   "ok": true,
+   "source": "mindicador",
+   "attempts": [
+    {
+     "source": "bcch",
+     "error": "omitida: faltan BCCH_USER / BCCH_PASS"
+    }
+   ],
+   "lastDate": "2026-09-01",
+   "count": 201
+  },
+  {
+   "id": "cobre",
+   "ok": true,
+   "source": "mindicador",
+   "attempts": [
+    {
+     "source": "bcch",
+     "error": "omitida: faltan BCCH_USER / BCCH_PASS"
+    }
+   ],
+   "lastDate": "2026-11-09",
+   "count": 3460
+  },
+  {
+   "id": "litio",
+   "ok": false,
+   "attempts": [
+    {
+     "source": "bcch",
+     "error": "omitida: faltan BCCH_USER / BCCH_PASS"
+    }
+   ]
+  },
+  {
+   "id": "petroleo-wti",
+   "ok": false,
+   "attempts": [
+    {
+     "source": "bcch",
+     "error": "omitida: faltan BCCH_USER / BCCH_PASS"
+    }
+   ]
+  },
+  {
+   "id": "balanza-comercial",
+   "ok": false,
+   "attempts": [
+    {
+     "source": "bcch",
+     "error": "omitida: faltan BCCH_USER / BCCH_PASS"
+    }
+   ]
+  },
+  {
+   "id": "pib-per-capita-ppa",
+   "ok": true,
+   "source": "worldbank",
+   "attempts": [],
+   "lastDate": "2025-01-01",
+   "count": 36
+  },
+  {
+   "id": "crecimiento-fmi",
+   "ok": true,
+   "source": "imf",
+   "attempts": [],
+   "lastDate": "2031-01-01",
+   "count": 42
+  },
+  {
+   "id": "inflacion-fmi",
+   "ok": true,
+   "source": "imf",
+   "attempts": [],
+   "lastDate": "2031-01-01",
+   "count": 42
+  },
+  {
+   "id": "desempleo-fmi",
+   "ok": true,
+   "source": "imf",
+   "attempts": [],
+   "lastDate": "2031-01-01",
+   "count": 42
+  },
+  {
+   "id": "deuda-publica",
+   "ok": true,
+   "source": "imf",
+   "attempts": [],
+   "lastDate": "2031-01-01",
+   "count": 41
+  },
+  {
+   "id": "gini",
+   "ok": true,
+   "source": "worldbank",
+   "attempts": [],
+   "lastDate": "2024-01-01",
+   "count": 17
+  },
+  {
+   "id": "esperanza-de-vida",
+   "ok": true,
+   "source": "worldbank",
+   "attempts": [],
+   "lastDate": "2024-01-01",
+   "count": 35
+  },
+  {
+   "id": "control-corrupcion",
+   "ok": true,
+   "source": "worldbank",
+   "attempts": [],
+   "lastDate": "2025-01-01",
+   "count": 27
+  },
+  {
+   "id": "estado-de-derecho",
+   "ok": true,
+   "source": "worldbank",
+   "attempts": [],
+   "lastDate": "2025-01-01",
+   "count": 27
+  },
+  {
+   "id": "efectividad-gobierno",
+   "ok": true,
+   "source": "worldbank",
+   "attempts": [],
+   "lastDate": "2025-01-01",
+   "count": 27
+  },
+  {
+   "id": "voz-rendicion-cuentas",
+   "ok": true,
+   "source": "worldbank",
+   "attempts": [],
+   "lastDate": "2025-01-01",
+   "count": 27
+  },
+  {
+   "id": "gasto-id",
+   "ok": true,
+   "source": "worldbank",
+   "attempts": [],
+   "lastDate": "2022-01-01",
+   "count": 16
+  },
+  {
+   "id": "gasto-educacion",
+   "ok": true,
+   "source": "worldbank",
+   "attempts": [],
+   "lastDate": "2022-01-01",
+   "count": 29
+  },
+  {
+   "id": "gasto-salud",
+   "ok": true,
+   "source": "worldbank",
+   "attempts": [],
+   "lastDate": "2024-01-01",
+   "count": 25
+  },
+  {
+   "id": "emisiones-co2",
+   "ok": true,
+   "source": "worldbank",
+   "attempts": [],
+   "lastDate": "2024-01-01",
+   "count": 35
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+---
+// Redirige a la versión en español; los navegadores en inglés ven el enlace alternativo.
+const target = `${import.meta.env.BASE_URL.replace(/\/?$/, '/')}es/`;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="refresh" content={`0; url=${target}`} />
+    <link rel="canonical" href={target} />
+    <title>Indicadores Chile</title>
+    <script is:inline define:vars={{ target }}>
+      const en = (navigator.languages || [navigator.language]).some((l) => /^en/i.test(l)) && !(navigator.languages || []).some((l) => /^es/i.test(l));
+      location.replace(en ? target.replace(/es\/$/, 'en/') : target);
+    </script>
+  </head>
+  <body style="font-family: system-ui, sans-serif; background: #f9f9f7; color: #0b0b0b">
+    <p><a href={target}>Ir a Indicadores Chile</a></p>
+  </body>
+</html>

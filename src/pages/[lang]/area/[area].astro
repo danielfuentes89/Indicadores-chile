@@ -1,0 +1,57 @@
+---
+import KpiCard from '../../../components/KpiCard.astro';
+import { LANGS, PLANNED_SOURCES, t, type Lang } from '../../../i18n/ui.ts';
+import Base from '../../../layouts/Base.astro';
+import { getCatalog } from '../../../lib/data.ts';
+
+export async function getStaticPaths() {
+  const catalog = await getCatalog();
+  return LANGS.flatMap((lang) => catalog.areas.map((a) => ({ params: { lang, area: a.id } })));
+}
+
+const lang = Astro.params.lang as Lang;
+const catalog = await getCatalog();
+const area = catalog.areas.find((a) => a.id === Astro.params.area)!;
+const items = catalog.indicators.filter((i) => i.area === area.id);
+const planned = PLANNED_SOURCES[area.id] ?? [];
+---
+
+<Base lang={lang} title={area.name[lang]} description={area.description[lang]} path={`area/${area.id}`}>
+  <h1>{area.name[lang]}</h1>
+  <p class="lead">{area.description[lang]}</p>
+
+  {
+    items.length > 0 && (
+      <div class="grid">
+        {items.map((entry) => (
+          <KpiCard entry={entry} lang={lang} />
+        ))}
+      </div>
+    )
+  }
+
+  {
+    planned.length > 0 && (
+      <section>
+        <h2>{area.status === 'planned' ? t(lang, 'area.planned') : t(lang, 'sources.planned')}</h2>
+        {area.status === 'planned' && <p class="muted">{t(lang, 'area.plannedText')}</p>}
+        <ul class="planned">
+          {planned.map((s) => (
+            <li>
+              <a href={s.url}>{s.name}</a> — <span class="muted">{s.note[lang]}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+</Base>
+
+<style>
+  .planned {
+    padding-left: 20px;
+  }
+  .planned li {
+    margin: 6px 0;
+  }
+</style>
