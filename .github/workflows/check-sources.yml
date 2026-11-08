@@ -1,0 +1,37 @@
+name: Verificar fuente CMF
+
+# Prueba manual del conector de la CMF: corre el pipeline sin la credencial del Banco Central
+# para que se use la CMF, en modo --dry-run (no guarda datos, no hace commit ni despliega).
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  cmf:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Consultar la CMF
+        env:
+          CMF_API_KEY: ${{ secrets.CMF_API_KEY }}
+        run: |
+          set -o pipefail
+          npm run fetch -- --only uf,dolar-observado,utm,ipc-mensual --dry-run | tee fetch.log
+          {
+            echo '## Resultado (CMF, sin guardar datos)'
+            echo '```'
+            grep -E '^(✔|✖|    ·)' fetch.log
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+          # Falla si algún indicador no se obtuvo desde la CMF.
+          ok=$(grep -cE '^✔ .* ok   cmf ' fetch.log || true)
+          echo "Indicadores obtenidos desde la CMF: $ok/4"
+          test "$ok" -eq 4
