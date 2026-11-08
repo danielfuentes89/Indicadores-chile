@@ -2,7 +2,7 @@
  "id": "desempleo-fmi",
  "source": "imf",
  "code": "LUR",
- "fetchedAt": "2026-11-08T05:25:05.739Z",
+ "fetchedAt": "2026-11-08T15:19:59.273Z",
  "projectionFrom": "2026",
  "compare": {
   "ADVEC": [
