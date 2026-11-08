@@ -2,8 +2,12 @@ import type { Catalog, CatalogEntry, Frequency, Observation, Registry, SeriesFil
 
 const SPARK_POINTS: Record<Frequency, number> = { D: 90, M: 36, Q: 20, A: 20 };
 
-/** Días sin un dato nuevo a partir de los cuales se advierte que la serie puede estar desactualizada. */
-export const STALE_AFTER_DAYS: Record<Frequency, number> = { D: 10, M: 100, Q: 200, A: 5 * 366 };
+/**
+ * Días sin un dato nuevo a partir de los cuales se advierte que la serie puede estar desactualizada.
+ * Las fechas marcan el inicio del período: un trimestre fechado el 1 de abril se publica a mediados de agosto
+ * y el siguiente recién a mediados de noviembre (~230 días después de esa fecha).
+ */
+export const STALE_AFTER_DAYS: Record<Frequency, number> = { D: 10, M: 100, Q: 280, A: 5 * 366 };
 
 export function isStale(lastDate: string | undefined, freq: Frequency, today: string): boolean {
   if (!lastDate) return false;
