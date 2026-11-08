@@ -1,213 +1,134 @@
 {
- "generatedAt": "2026-11-08T04:36:06.040Z",
+ "generatedAt": "2026-11-08T05:25:08.612Z",
  "today": "2026-11-08",
  "results": [
   {
    "id": "dolar-observado",
    "ok": true,
-   "source": "mindicador",
-   "attempts": [
-    {
-     "source": "bcch",
-     "error": "omitida: falta BCCH_TOKEN (o BCCH_USER y BCCH_PASS)"
-    },
-    {
-     "source": "cmf",
-     "error": "omitida: falta CMF_API_KEY"
-    }
-   ],
+   "source": "bcch",
+   "attempts": [],
    "lastDate": "2026-11-09",
    "count": 6692
   },
   {
    "id": "euro",
    "ok": true,
-   "source": "mindicador",
-   "attempts": [
-    {
-     "source": "bcch",
-     "error": "omitida: falta BCCH_TOKEN (o BCCH_USER y BCCH_PASS)"
-    },
-    {
-     "source": "cmf",
-     "error": "omitida: falta CMF_API_KEY"
-    }
-   ],
+   "source": "bcch",
+   "attempts": [],
    "lastDate": "2026-11-09",
    "count": 6692
   },
   {
    "id": "uf",
    "ok": true,
-   "source": "mindicador",
-   "attempts": [
-    {
-     "source": "bcch",
-     "error": "omitida: falta BCCH_TOKEN (o BCCH_USER y BCCH_PASS)"
-    },
-    {
-     "source": "cmf",
-     "error": "omitida: falta CMF_API_KEY"
-    }
-   ],
+   "source": "bcch",
+   "attempts": [],
    "lastDate": "2026-11-09",
-   "count": 9808
+   "count": 9810
   },
   {
    "id": "utm",
    "ok": true,
-   "source": "mindicador",
-   "attempts": [
-    {
-     "source": "bcch",
-     "error": "omitida: falta BCCH_TOKEN (o BCCH_USER y BCCH_PASS)"
-    },
-    {
-     "source": "cmf",
-     "error": "omitida: falta CMF_API_KEY"
-    }
-   ],
+   "source": "bcch",
+   "attempts": [],
    "lastDate": "2026-11-01",
    "count": 323
   },
   {
    "id": "tpm",
    "ok": true,
-   "source": "mindicador",
-   "attempts": [
-    {
-     "source": "bcch",
-     "error": "omitida: falta BCCH_TOKEN (o BCCH_USER y BCCH_PASS)"
-    }
-   ],
+   "source": "bcch",
+   "attempts": [],
    "lastDate": "2026-11-09",
-   "count": 6265
+   "count": 6692
   },
   {
    "id": "ipc-anual",
-   "ok": false,
-   "attempts": [
-    {
-     "source": "bcch",
-     "error": "omitida: falta BCCH_TOKEN (o BCCH_USER y BCCH_PASS)"
-    }
-   ]
+   "ok": true,
+   "source": "bcch",
+   "attempts": [],
+   "lastDate": "2026-10-01",
+   "count": 322
   },
   {
    "id": "ipc-mensual",
    "ok": true,
-   "source": "mindicador",
-   "attempts": [
-    {
-     "source": "bcch",
-     "error": "omitida: falta BCCH_TOKEN (o BCCH_USER y BCCH_PASS)"
-    },
-    {
-     "source": "cmf",
-     "error": "omitida: falta CMF_API_KEY"
-    }
-   ],
-   "lastDate": "2025-12-01",
-   "count": 312
+   "source": "bcch",
+   "attempts": [],
+   "lastDate": "2026-10-01",
+   "count": 322
   },
   {
    "id": "expectativa-inflacion",
-   "ok": false,
-   "attempts": [
-    {
-     "source": "bcch",
-     "error": "omitida: falta BCCH_TOKEN (o BCCH_USER y BCCH_PASS)"
-    }
-   ]
+   "ok": true,
+   "source": "bcch",
+   "attempts": [],
+   "lastDate": "2026-10-01",
+   "count": 202
   },
   {
    "id": "imacec",
    "ok": true,
-   "source": "mindicador",
-   "attempts": [
-    {
-     "source": "bcch",
-     "error": "omitida: falta BCCH_TOKEN (o BCCH_USER y BCCH_PASS)"
-    }
-   ],
+   "source": "bcch",
+   "attempts": [],
    "lastDate": "2026-09-01",
-   "count": 321
+   "count": 309
   },
   {
    "id": "imacec-no-minero",
-   "ok": false,
-   "attempts": [
-    {
-     "source": "bcch",
-     "error": "omitida: falta BCCH_TOKEN (o BCCH_USER y BCCH_PASS)"
-    }
-   ]
+   "ok": true,
+   "source": "bcch",
+   "attempts": [],
+   "lastDate": "2026-09-01",
+   "count": 309
   },
   {
    "id": "pib",
-   "ok": false,
-   "attempts": [
-    {
-     "source": "bcch",
-     "error": "omitida: falta BCCH_TOKEN (o BCCH_USER y BCCH_PASS)"
-    }
-   ]
+   "ok": true,
+   "source": "bcch",
+   "attempts": [],
+   "lastDate": "2026-04-01",
+   "count": 118
   },
   {
    "id": "desempleo",
    "ok": true,
-   "source": "mindicador",
-   "attempts": [
-    {
-     "source": "bcch",
-     "error": "omitida: falta BCCH_TOKEN (o BCCH_USER y BCCH_PASS)"
-    }
-   ],
+   "source": "bcch",
+   "attempts": [],
    "lastDate": "2026-09-01",
-   "count": 201
+   "count": 199
   },
   {
    "id": "cobre",
    "ok": true,
-   "source": "mindicador",
-   "attempts": [
-    {
-     "source": "bcch",
-     "error": "omitida: falta BCCH_TOKEN (o BCCH_USER y BCCH_PASS)"
-    }
-   ],
+   "source": "bcch",
+   "attempts": [],
    "lastDate": "2026-11-09",
-   "count": 3460
+   "count": 3506
   },
   {
    "id": "litio",
-   "ok": false,
-   "attempts": [
-    {
-     "source": "bcch",
-     "error": "omitida: falta BCCH_TOKEN (o BCCH_USER y BCCH_PASS)"
-    }
-   ]
+   "ok": true,
+   "source": "bcch",
+   "attempts": [],
+   "lastDate": "2026-11-03",
+   "count": 2001
   },
   {
    "id": "petroleo-wti",
-   "ok": false,
-   "attempts": [
-    {
-     "source": "bcch",
-     "error": "omitida: falta BCCH_TOKEN (o BCCH_USER y BCCH_PASS)"
-    }
-   ]
+   "ok": true,
+   "source": "bcch",
+   "attempts": [],
+   "lastDate": "2026-11-03",
+   "count": 6566
   },
   {
    "id": "balanza-comercial",
-   "ok": false,
-   "attempts": [
-    {
-     "source": "bcch",
-     "error": "omitida: falta BCCH_TOKEN (o BCCH_USER y BCCH_PASS)"
-    }
-   ]
+   "ok": true,
+   "source": "bcch",
+   "attempts": [],
+   "lastDate": "2026-09-01",
+   "count": 285
   },
   {
    "id": "pib-per-capita-ppa",

@@ -1,8 +1,8 @@
 {
  "id": "euro",
- "source": "mindicador",
- "code": "euro",
- "fetchedAt": "2026-11-08T04:34:33.703Z",
+ "source": "bcch",
+ "code": "F072.CLP.EUR.N.O.D",
+ "fetchedAt": "2026-11-08T05:24:59.139Z",
  "observations": [
   ["2000-01-03",532.89],
   ["2000-01-04",538.15],
