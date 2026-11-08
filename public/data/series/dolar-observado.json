@@ -2,7 +2,7 @@
  "id": "dolar-observado",
  "source": "mindicador",
  "code": "dolar",
- "fetchedAt": "2026-11-08T02:45:36.662Z",
+ "fetchedAt": "2026-11-08T04:34:22.726Z",
  "observations": [
   ["2000-01-03",530.07],
   ["2000-01-04",527.28],
