@@ -41,8 +41,8 @@ internacionales. La configuración se guarda en el navegador (`localStorage`) y 
 1. **Secrets del repositorio** (Settings → Secrets and variables → Actions):
    | Secret | Cómo obtenerlo |
    |---|---|
-   | `BCCH_USER` | Correo de tu cuenta en la [BDE del Banco Central](https://si3.bcentral.cl/siete). |
-   | `BCCH_PASS` | Clave / API key de esa cuenta, con la API habilitada desde el portal de la BDE. Vence al año: renovarla. |
+   | `BCCH_TOKEN` | API Key Token de la [BDE del Banco Central](https://si3.bcentral.cl/siete): habilita la API una vez, luego *Mi Cuenta → Apikey Token*. Vence al año: renuévalo o extiéndelo ahí mismo. |
+   | `BCCH_USER` / `BCCH_PASS` | Opcional, método antiguo: correo y contraseña de la BDE. Solo se usan si no hay `BCCH_TOKEN`. |
    | `CMF_API_KEY` | API key gratuita en [api.cmfchile.cl](https://api.cmfchile.cl). |
 
    Sin estas claves el sitio funciona igual con las fuentes sin credenciales (mindicador.cl, Banco Mundial, FMI), pero los
