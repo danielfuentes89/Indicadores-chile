@@ -2,7 +2,7 @@
  "id": "ipc-mensual",
  "source": "mindicador",
  "code": "ipc",
- "fetchedAt": "2026-11-07T17:41:13.570Z",
+ "fetchedAt": "2026-11-08T02:45:38.839Z",
  "observations": [
   ["2000-01-01",0.2],
   ["2000-02-01",0.6],

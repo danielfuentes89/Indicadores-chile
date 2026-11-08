@@ -2,7 +2,7 @@
  "id": "desempleo",
  "source": "mindicador",
  "code": "tasa_desempleo",
- "fetchedAt": "2026-11-07T17:41:26.850Z",
+ "fetchedAt": "2026-11-08T02:45:39.908Z",
  "observations": [
   ["2010-01-01",9.7],
   ["2010-02-01",9.14],
