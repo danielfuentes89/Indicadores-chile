@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-09T03:02:25.801Z",
+ "generatedAt": "2026-11-09T21:26:38.695Z",
  "today": "2026-11-09",
  "results": [
   {
@@ -7,24 +7,24 @@
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-09",
-   "count": 6692
+   "lastDate": "2026-11-10",
+   "count": 6693
   },
   {
    "id": "euro",
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-09",
-   "count": 6692
+   "lastDate": "2026-11-10",
+   "count": 6693
   },
   {
    "id": "uf",
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-09",
-   "count": 9810
+   "lastDate": "2026-12-09",
+   "count": 9840
   },
   {
    "id": "utm",
@@ -103,8 +103,8 @@
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-09",
-   "count": 3506
+   "lastDate": "2026-11-10",
+   "count": 3507
   },
   {
    "id": "litio",
@@ -127,8 +127,8 @@
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-09-01",
-   "count": 285
+   "lastDate": "2026-10-01",
+   "count": 286
   },
   {
    "id": "pib-per-capita-ppa",
