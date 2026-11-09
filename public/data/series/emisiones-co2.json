@@ -2,7 +2,7 @@
  "id": "emisiones-co2",
  "source": "worldbank",
  "code": "EN.GHG.CO2.PC.CE.AR5",
- "fetchedAt": "2026-11-08T17:04:16.012Z",
+ "fetchedAt": "2026-11-09T03:02:25.796Z",
  "compare": {
   "OED": [
    ["1990-01-01",10.7353310508427],
