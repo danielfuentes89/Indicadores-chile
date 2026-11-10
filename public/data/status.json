@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-10T04:50:22.892Z",
+ "generatedAt": "2026-11-10T18:40:33.152Z",
  "today": "2026-11-10",
  "results": [
   {
@@ -63,8 +63,8 @@
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-10-01",
-   "count": 202
+   "lastDate": "2026-11-01",
+   "count": 203
   },
   {
    "id": "imacec",
@@ -111,8 +111,8 @@
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-03",
-   "count": 2001
+   "lastDate": "2026-11-10",
+   "count": 2006
   },
   {
    "id": "petroleo-wti",

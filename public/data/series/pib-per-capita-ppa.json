@@ -2,7 +2,7 @@
  "id": "pib-per-capita-ppa",
  "source": "worldbank",
  "code": "NY.GDP.PCAP.PP.CD",
- "fetchedAt": "2026-11-10T04:50:18.747Z",
+ "fetchedAt": "2026-11-10T18:40:29.584Z",
  "compare": {
   "OED": [
    ["1990-01-01",16703.5943585174],
