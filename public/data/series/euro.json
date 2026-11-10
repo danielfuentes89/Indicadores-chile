@@ -2,7 +2,7 @@
  "id": "euro",
  "source": "bcch",
  "code": "F072.CLP.EUR.N.O.D",
- "fetchedAt": "2026-11-09T21:26:31.103Z",
+ "fetchedAt": "2026-11-10T04:49:28.425Z",
  "observations": [
   ["2000-01-03",532.89],
   ["2000-01-04",538.15],

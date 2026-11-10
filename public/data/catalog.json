@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-09T21:26:38.692Z",
+ "generatedAt": "2026-11-10T04:50:22.890Z",
  "areas": [
   {
    "id": "economia",
@@ -142,17 +142,16 @@
    "featured": true,
    "source": "bcch",
    "code": "F073.TCO.PRE.Z.D",
-   "updatedAt": "2026-11-09T21:26:30.879Z",
+   "updatedAt": "2026-11-10T04:49:28.194Z",
    "last": [
+    "2026-11-10",
+    969.8
+   ],
+   "previous": [
     "2026-11-09",
     979.88
    ],
-   "previous": [
-    "2026-11-06",
-    970.94
-   ],
    "spark": [
-    927.35,
     921.7,
     921.74,
     926.25,
@@ -241,7 +240,8 @@
     980.59,
     970.95,
     970.94,
-    979.88
+    979.88,
+    969.8
    ],
    "hasCompare": false,
    "stale": false
@@ -266,17 +266,16 @@
    "featured": false,
    "source": "bcch",
    "code": "F072.CLP.EUR.N.O.D",
-   "updatedAt": "2026-11-09T21:26:31.103Z",
+   "updatedAt": "2026-11-10T04:49:28.425Z",
    "last": [
+    "2026-11-10",
+    1086.61
+   ],
+   "previous": [
     "2026-11-09",
     1092.4
    ],
-   "previous": [
-    "2026-11-06",
-    1090.94
-   ],
    "spark": [
-    1055.13,
     1053.85,
     1054.38,
     1059.54,
@@ -365,7 +364,8 @@
     1097.72,
     1090.83,
     1090.94,
-    1092.4
+    1092.4,
+    1086.61
    ],
    "hasCompare": false,
    "stale": false
@@ -394,17 +394,16 @@
    "featured": true,
    "source": "bcch",
    "code": "F073.UFF.PRE.Z.D",
-   "updatedAt": "2026-11-09T21:26:31.357Z",
+   "updatedAt": "2026-11-10T04:49:28.675Z",
    "last": [
+    "2026-11-10",
+    41302.33
+   ],
+   "previous": [
     "2026-11-09",
     41295.46
    ],
-   "previous": [
-    "2026-11-08",
-    41290.15
-   ],
    "spark": [
-    40848.74,
     40850.06,
     40851.38,
     40852.69,
@@ -493,7 +492,8 @@
     41279.51,
     41284.83,
     41290.15,
-    41295.46
+    41295.46,
+    41302.33
    ],
    "hasCompare": false,
    "stale": false
@@ -518,7 +518,7 @@
    "featured": false,
    "source": "bcch",
    "code": "F073.UTR.PRE.Z.M",
-   "updatedAt": "2026-11-09T21:26:31.602Z",
+   "updatedAt": "2026-11-10T04:49:28.916Z",
    "last": [
     "2026-11-01",
     72440
@@ -592,13 +592,13 @@
    "featured": true,
    "source": "bcch",
    "code": "F022.TPM.TIN.D001.NO.Z.D",
-   "updatedAt": "2026-11-09T21:26:31.860Z",
+   "updatedAt": "2026-11-10T04:49:29.160Z",
    "last": [
-    "2026-11-09",
+    "2026-11-10",
     4.5
    ],
    "previous": [
-    "2026-11-06",
+    "2026-11-09",
     4.5
    ],
    "spark": [
@@ -720,7 +720,7 @@
    "featured": true,
    "source": "bcch",
    "code": "G073.IPC.V12.2023.M",
-   "updatedAt": "2026-11-09T21:26:32.114Z",
+   "updatedAt": "2026-11-10T04:49:29.414Z",
    "last": [
     "2026-10-01",
     4.52297514281983
@@ -790,7 +790,7 @@
    "featured": false,
    "source": "bcch",
    "code": "F074.IPC.VAR.Z.Z.C.M",
-   "updatedAt": "2026-11-09T21:26:32.360Z",
+   "updatedAt": "2026-11-10T04:49:29.673Z",
    "last": [
     "2026-10-01",
     0.5
@@ -860,7 +860,7 @@
    "featured": false,
    "source": "bcch",
    "code": "F089.IPC.V12.14.M",
-   "updatedAt": "2026-11-09T21:26:32.603Z",
+   "updatedAt": "2026-11-10T04:49:29.917Z",
    "last": [
     "2026-10-01",
     3.4
@@ -935,7 +935,7 @@
    "source": "bcch",
    "code": "F032.IMC.IND.Z.Z.EP18.Z.Z.0.M",
    "derive": "yoy",
-   "updatedAt": "2026-11-09T21:26:32.856Z",
+   "updatedAt": "2026-11-10T04:49:30.171Z",
    "last": [
     "2026-09-01",
     0.192845
@@ -1006,7 +1006,7 @@
    "source": "bcch",
    "code": "F032.IMC.IND.Z.Z.EP18.N03.Z.0.M",
    "derive": "yoy",
-   "updatedAt": "2026-11-09T21:26:33.102Z",
+   "updatedAt": "2026-11-10T04:49:30.587Z",
    "last": [
     "2026-09-01",
     2.044391
@@ -1077,7 +1077,7 @@
    "source": "bcch",
    "code": "F032.PIB.FLU.R.CLP.EP18.Z.Z.0.T",
    "derive": "yoy",
-   "updatedAt": "2026-11-09T21:26:33.364Z",
+   "updatedAt": "2026-11-10T04:49:30.857Z",
    "last": [
     "2026-04-01",
     -0.186313
@@ -1135,7 +1135,7 @@
    "featured": true,
    "source": "bcch",
    "code": "F049.DES.TAS.INE9.10.M",
-   "updatedAt": "2026-11-09T21:26:33.625Z",
+   "updatedAt": "2026-11-10T04:49:31.156Z",
    "last": [
     "2026-09-01",
     9.80262482382071
@@ -1209,17 +1209,16 @@
    "featured": true,
    "source": "bcch",
    "code": "F019.PPB.PRE.100.D",
-   "updatedAt": "2026-11-09T21:26:33.859Z",
+   "updatedAt": "2026-11-10T04:49:31.392Z",
    "last": [
+    "2026-11-10",
+    6.3334
+   ],
+   "previous": [
     "2026-11-09",
     6.3232
    ],
-   "previous": [
-    "2026-11-06",
-    6.4034
-   ],
    "spark": [
-    6.055,
     6.0098,
     6.0272,
     6.0407,
@@ -1308,7 +1307,8 @@
     6.5761,
     6.4203,
     6.4034,
-    6.3232
+    6.3232,
+    6.3334
    ],
    "hasCompare": false,
    "stale": false
@@ -1333,7 +1333,7 @@
    "featured": false,
    "source": "bcch",
    "code": "F019.PPB.PRE.37.D",
-   "updatedAt": "2026-11-09T21:26:34.102Z",
+   "updatedAt": "2026-11-10T04:49:31.633Z",
    "last": [
     "2026-11-03",
     15.25
@@ -1457,7 +1457,7 @@
    "featured": false,
    "source": "bcch",
    "code": "F019.PPB.PRE.41B.D",
-   "updatedAt": "2026-11-09T21:26:34.373Z",
+   "updatedAt": "2026-11-10T04:49:32.278Z",
    "last": [
     "2026-11-03",
     99.64
@@ -1581,7 +1581,7 @@
    "featured": false,
    "source": "bcch",
    "code": "F068.B1.VAR.T0.0.S.N.Z.Z.Z.Z.6.0.M",
-   "updatedAt": "2026-11-09T21:26:34.615Z",
+   "updatedAt": "2026-11-10T04:49:32.505Z",
    "last": [
     "2026-10-01",
     2552.4273458
@@ -1671,7 +1671,7 @@
    ],
    "source": "worldbank",
    "code": "NY.GDP.PCAP.PP.CD",
-   "updatedAt": "2026-11-09T21:26:34.747Z",
+   "updatedAt": "2026-11-10T04:50:18.747Z",
    "last": [
     "2025-01-01",
     37774.0879069903
@@ -1752,7 +1752,7 @@
    ],
    "source": "imf",
    "code": "NGDP_RPCH",
-   "updatedAt": "2026-11-09T21:26:35.407Z",
+   "updatedAt": "2026-11-10T04:50:19.277Z",
    "last": [
     "2025-01-01",
     2.5
@@ -1830,7 +1830,7 @@
    ],
    "source": "imf",
    "code": "PCPIPCH",
-   "updatedAt": "2026-11-09T21:26:35.725Z",
+   "updatedAt": "2026-11-10T04:50:19.665Z",
    "last": [
     "2025-01-01",
     4.2
@@ -1894,7 +1894,7 @@
    ],
    "source": "imf",
    "code": "LUR",
-   "updatedAt": "2026-11-09T21:26:36.057Z",
+   "updatedAt": "2026-11-10T04:50:19.974Z",
    "last": [
     "2025-01-01",
     8.5
@@ -1976,7 +1976,7 @@
    ],
    "source": "imf",
    "code": "GGXWDG_NGDP",
-   "updatedAt": "2026-11-09T21:26:36.360Z",
+   "updatedAt": "2026-11-10T04:50:20.276Z",
    "last": [
     "2025-01-01",
     41.5
@@ -2031,7 +2031,7 @@
    "featured": false,
    "source": "worldbank",
    "code": "SI.POV.GINI",
-   "updatedAt": "2026-11-09T21:26:36.428Z",
+   "updatedAt": "2026-11-10T04:50:20.476Z",
    "last": [
     "2024-01-01",
     43
@@ -2098,7 +2098,7 @@
    ],
    "source": "worldbank",
    "code": "SP.DYN.LE00.IN",
-   "updatedAt": "2026-11-09T21:26:36.692Z",
+   "updatedAt": "2026-11-10T04:50:20.768Z",
    "last": [
     "2024-01-01",
     81.359
@@ -2156,7 +2156,7 @@
    "featured": true,
    "source": "worldbank",
    "code": "GOV_WGI_CC.EST",
-   "updatedAt": "2026-11-09T21:26:36.934Z",
+   "updatedAt": "2026-11-10T04:50:20.972Z",
    "last": [
     "2025-01-01",
     1.0992872
@@ -2210,7 +2210,7 @@
    "featured": false,
    "source": "worldbank",
    "code": "GOV_WGI_RL.EST",
-   "updatedAt": "2026-11-09T21:26:37.165Z",
+   "updatedAt": "2026-11-10T04:50:21.222Z",
    "last": [
     "2025-01-01",
     0.680463
@@ -2264,7 +2264,7 @@
    "featured": false,
    "source": "worldbank",
    "code": "GOV_WGI_GE.EST",
-   "updatedAt": "2026-11-09T21:26:37.438Z",
+   "updatedAt": "2026-11-10T04:50:21.492Z",
    "last": [
     "2025-01-01",
     1.0424726
@@ -2318,7 +2318,7 @@
    "featured": false,
    "source": "worldbank",
    "code": "GOV_WGI_VA.EST",
-   "updatedAt": "2026-11-09T21:26:37.689Z",
+   "updatedAt": "2026-11-10T04:50:21.733Z",
    "last": [
     "2025-01-01",
     1.0353151
@@ -2388,7 +2388,7 @@
    ],
    "source": "worldbank",
    "code": "GB.XPD.RSDV.GD.ZS",
-   "updatedAt": "2026-11-09T21:26:37.940Z",
+   "updatedAt": "2026-11-10T04:50:21.995Z",
    "last": [
     "2022-01-01",
     0.39205
@@ -2454,7 +2454,7 @@
    ],
    "source": "worldbank",
    "code": "SE.XPD.TOTL.GD.ZS",
-   "updatedAt": "2026-11-09T21:26:38.213Z",
+   "updatedAt": "2026-11-10T04:50:22.311Z",
    "last": [
     "2022-01-01",
     4.91201019287109
@@ -2524,7 +2524,7 @@
    ],
    "source": "worldbank",
    "code": "SH.XPD.CHEX.GD.ZS",
-   "updatedAt": "2026-11-09T21:26:38.453Z",
+   "updatedAt": "2026-11-10T04:50:22.509Z",
    "last": [
     "2024-01-01",
     10.53092575
@@ -2594,7 +2594,7 @@
    ],
    "source": "worldbank",
    "code": "EN.GHG.CO2.PC.CE.AR5",
-   "updatedAt": "2026-11-09T21:26:38.688Z",
+   "updatedAt": "2026-11-10T04:50:22.885Z",
    "last": [
     "2024-01-01",
     3.93744000373189
