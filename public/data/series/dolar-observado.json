@@ -2,7 +2,7 @@
  "id": "dolar-observado",
  "source": "bcch",
  "code": "F073.TCO.PRE.Z.D",
- "fetchedAt": "2026-11-11T03:08:17.006Z",
+ "fetchedAt": "2026-11-11T18:42:33.347Z",
  "observations": [
   ["2000-01-03",530.07],
   ["2000-01-04",527.28],

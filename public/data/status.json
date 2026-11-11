@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-11T03:11:49.592Z",
+ "generatedAt": "2026-11-11T18:42:51.197Z",
  "today": "2026-11-11",
  "results": [
   {
@@ -132,14 +132,9 @@
   },
   {
    "id": "pib-per-capita-ppa",
-   "ok": false,
+   "ok": true,
    "source": "worldbank",
-   "attempts": [
-    {
-     "source": "worldbank",
-     "error": "HTTP 502 en https://api.worldbank.org/v2/country/CHL;OED;LCN/indicator/NY.GDP.PCAP.PP.CD?format=json&per_page=2000&date=1990%3A2026"
-    }
-   ],
+   "attempts": [],
    "lastDate": "2025-01-01",
    "count": 36
   },
@@ -177,53 +172,33 @@
   },
   {
    "id": "gini",
-   "ok": false,
+   "ok": true,
    "source": "worldbank",
-   "attempts": [
-    {
-     "source": "worldbank",
-     "error": "HTTP 502 en https://api.worldbank.org/v2/country/CHL/indicator/SI.POV.GINI?format=json&per_page=2000&date=1987%3A2026"
-    }
-   ],
+   "attempts": [],
    "lastDate": "2024-01-01",
    "count": 17
   },
   {
    "id": "esperanza-de-vida",
-   "ok": false,
+   "ok": true,
    "source": "worldbank",
-   "attempts": [
-    {
-     "source": "worldbank",
-     "error": "HTTP 502 en https://api.worldbank.org/v2/country/CHL;OED;LCN/indicator/SP.DYN.LE00.IN?format=json&per_page=2000&date=1990%3A2026"
-    }
-   ],
+   "attempts": [],
    "lastDate": "2024-01-01",
    "count": 35
   },
   {
    "id": "control-corrupcion",
-   "ok": false,
+   "ok": true,
    "source": "worldbank",
-   "attempts": [
-    {
-     "source": "worldbank",
-     "error": "HTTP 502 en https://api.worldbank.org/v2/country/CHL/indicator/GOV_WGI_CC.EST?format=json&per_page=2000&date=1996%3A2026&source=3"
-    }
-   ],
+   "attempts": [],
    "lastDate": "2025-01-01",
    "count": 27
   },
   {
    "id": "estado-de-derecho",
-   "ok": false,
+   "ok": true,
    "source": "worldbank",
-   "attempts": [
-    {
-     "source": "worldbank",
-     "error": "HTTP 502 en https://api.worldbank.org/v2/country/CHL/indicator/GOV_WGI_RL.EST?format=json&per_page=2000&date=1996%3A2026&source=3"
-    }
-   ],
+   "attempts": [],
    "lastDate": "2025-01-01",
    "count": 27
   },
@@ -237,27 +212,17 @@
   },
   {
    "id": "voz-rendicion-cuentas",
-   "ok": false,
+   "ok": true,
    "source": "worldbank",
-   "attempts": [
-    {
-     "source": "worldbank",
-     "error": "HTTP 502 en https://api.worldbank.org/v2/country/CHL/indicator/GOV_WGI_VA.EST?format=json&per_page=2000&date=1996%3A2026&source=3"
-    }
-   ],
+   "attempts": [],
    "lastDate": "2025-01-01",
    "count": 27
   },
   {
    "id": "gasto-id",
-   "ok": false,
+   "ok": true,
    "source": "worldbank",
-   "attempts": [
-    {
-     "source": "worldbank",
-     "error": "HTTP 502 en https://api.worldbank.org/v2/country/CHL;OED;LCN/indicator/GB.XPD.RSDV.GD.ZS?format=json&per_page=2000&date=1996%3A2026"
-    }
-   ],
+   "attempts": [],
    "lastDate": "2022-01-01",
    "count": 16
   },
@@ -271,27 +236,17 @@
   },
   {
    "id": "gasto-salud",
-   "ok": false,
+   "ok": true,
    "source": "worldbank",
-   "attempts": [
-    {
-     "source": "worldbank",
-     "error": "HTTP 502 en https://api.worldbank.org/v2/country/CHL;OED;LCN/indicator/SH.XPD.CHEX.GD.ZS?format=json&per_page=2000&date=2000%3A2026"
-    }
-   ],
+   "attempts": [],
    "lastDate": "2024-01-01",
    "count": 25
   },
   {
    "id": "emisiones-co2",
-   "ok": false,
+   "ok": true,
    "source": "worldbank",
-   "attempts": [
-    {
-     "source": "worldbank",
-     "error": "HTTP 502 en https://api.worldbank.org/v2/country/CHL;OED;LCN/indicator/EN.GHG.CO2.PC.CE.AR5?format=json&per_page=2000&date=1990%3A2026"
-    }
-   ],
+   "attempts": [],
    "lastDate": "2024-01-01",
    "count": 35
   }
