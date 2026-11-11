@@ -1,22 +1,22 @@
 {
- "generatedAt": "2026-11-10T18:40:33.152Z",
- "today": "2026-11-10",
+ "generatedAt": "2026-11-11T03:11:49.592Z",
+ "today": "2026-11-11",
  "results": [
   {
    "id": "dolar-observado",
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-10",
-   "count": 6693
+   "lastDate": "2026-11-11",
+   "count": 6694
   },
   {
    "id": "euro",
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-10",
-   "count": 6693
+   "lastDate": "2026-11-11",
+   "count": 6694
   },
   {
    "id": "uf",
@@ -39,8 +39,8 @@
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-10",
-   "count": 6693
+   "lastDate": "2026-11-11",
+   "count": 6694
   },
   {
    "id": "ipc-anual",
@@ -103,8 +103,8 @@
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-10",
-   "count": 3507
+   "lastDate": "2026-11-11",
+   "count": 3508
   },
   {
    "id": "litio",
@@ -132,9 +132,14 @@
   },
   {
    "id": "pib-per-capita-ppa",
-   "ok": true,
+   "ok": false,
    "source": "worldbank",
-   "attempts": [],
+   "attempts": [
+    {
+     "source": "worldbank",
+     "error": "HTTP 502 en https://api.worldbank.org/v2/country/CHL;OED;LCN/indicator/NY.GDP.PCAP.PP.CD?format=json&per_page=2000&date=1990%3A2026"
+    }
+   ],
    "lastDate": "2025-01-01",
    "count": 36
   },
@@ -172,33 +177,53 @@
   },
   {
    "id": "gini",
-   "ok": true,
+   "ok": false,
    "source": "worldbank",
-   "attempts": [],
+   "attempts": [
+    {
+     "source": "worldbank",
+     "error": "HTTP 502 en https://api.worldbank.org/v2/country/CHL/indicator/SI.POV.GINI?format=json&per_page=2000&date=1987%3A2026"
+    }
+   ],
    "lastDate": "2024-01-01",
    "count": 17
   },
   {
    "id": "esperanza-de-vida",
-   "ok": true,
+   "ok": false,
    "source": "worldbank",
-   "attempts": [],
+   "attempts": [
+    {
+     "source": "worldbank",
+     "error": "HTTP 502 en https://api.worldbank.org/v2/country/CHL;OED;LCN/indicator/SP.DYN.LE00.IN?format=json&per_page=2000&date=1990%3A2026"
+    }
+   ],
    "lastDate": "2024-01-01",
    "count": 35
   },
   {
    "id": "control-corrupcion",
-   "ok": true,
+   "ok": false,
    "source": "worldbank",
-   "attempts": [],
+   "attempts": [
+    {
+     "source": "worldbank",
+     "error": "HTTP 502 en https://api.worldbank.org/v2/country/CHL/indicator/GOV_WGI_CC.EST?format=json&per_page=2000&date=1996%3A2026&source=3"
+    }
+   ],
    "lastDate": "2025-01-01",
    "count": 27
   },
   {
    "id": "estado-de-derecho",
-   "ok": true,
+   "ok": false,
    "source": "worldbank",
-   "attempts": [],
+   "attempts": [
+    {
+     "source": "worldbank",
+     "error": "HTTP 502 en https://api.worldbank.org/v2/country/CHL/indicator/GOV_WGI_RL.EST?format=json&per_page=2000&date=1996%3A2026&source=3"
+    }
+   ],
    "lastDate": "2025-01-01",
    "count": 27
   },
@@ -212,17 +237,27 @@
   },
   {
    "id": "voz-rendicion-cuentas",
-   "ok": true,
+   "ok": false,
    "source": "worldbank",
-   "attempts": [],
+   "attempts": [
+    {
+     "source": "worldbank",
+     "error": "HTTP 502 en https://api.worldbank.org/v2/country/CHL/indicator/GOV_WGI_VA.EST?format=json&per_page=2000&date=1996%3A2026&source=3"
+    }
+   ],
    "lastDate": "2025-01-01",
    "count": 27
   },
   {
    "id": "gasto-id",
-   "ok": true,
+   "ok": false,
    "source": "worldbank",
-   "attempts": [],
+   "attempts": [
+    {
+     "source": "worldbank",
+     "error": "HTTP 502 en https://api.worldbank.org/v2/country/CHL;OED;LCN/indicator/GB.XPD.RSDV.GD.ZS?format=json&per_page=2000&date=1996%3A2026"
+    }
+   ],
    "lastDate": "2022-01-01",
    "count": 16
   },
@@ -236,17 +271,27 @@
   },
   {
    "id": "gasto-salud",
-   "ok": true,
+   "ok": false,
    "source": "worldbank",
-   "attempts": [],
+   "attempts": [
+    {
+     "source": "worldbank",
+     "error": "HTTP 502 en https://api.worldbank.org/v2/country/CHL;OED;LCN/indicator/SH.XPD.CHEX.GD.ZS?format=json&per_page=2000&date=2000%3A2026"
+    }
+   ],
    "lastDate": "2024-01-01",
    "count": 25
   },
   {
    "id": "emisiones-co2",
-   "ok": true,
+   "ok": false,
    "source": "worldbank",
-   "attempts": [],
+   "attempts": [
+    {
+     "source": "worldbank",
+     "error": "HTTP 502 en https://api.worldbank.org/v2/country/CHL;OED;LCN/indicator/EN.GHG.CO2.PC.CE.AR5?format=json&per_page=2000&date=1990%3A2026"
+    }
+   ],
    "lastDate": "2024-01-01",
    "count": 35
   }
