@@ -2,7 +2,7 @@
  "id": "inflacion-fmi",
  "source": "imf",
  "code": "PCPIPCH",
- "fetchedAt": "2026-11-11T18:42:38.577Z",
+ "fetchedAt": "2026-11-12T04:26:14.758Z",
  "projectionFrom": "2026",
  "compare": {
   "WEOWORLD": [

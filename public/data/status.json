@@ -1,22 +1,22 @@
 {
- "generatedAt": "2026-11-11T18:42:51.197Z",
- "today": "2026-11-11",
+ "generatedAt": "2026-11-12T04:26:18.194Z",
+ "today": "2026-11-12",
  "results": [
   {
    "id": "dolar-observado",
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-11",
-   "count": 6694
+   "lastDate": "2026-11-12",
+   "count": 6695
   },
   {
    "id": "euro",
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-11",
-   "count": 6694
+   "lastDate": "2026-11-12",
+   "count": 6695
   },
   {
    "id": "uf",
@@ -39,8 +39,8 @@
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-11",
-   "count": 6694
+   "lastDate": "2026-11-12",
+   "count": 6695
   },
   {
    "id": "ipc-anual",
@@ -103,8 +103,8 @@
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-11",
-   "count": 3508
+   "lastDate": "2026-11-12",
+   "count": 3509
   },
   {
    "id": "litio",
@@ -132,9 +132,14 @@
   },
   {
    "id": "pib-per-capita-ppa",
-   "ok": true,
+   "ok": false,
    "source": "worldbank",
-   "attempts": [],
+   "attempts": [
+    {
+     "source": "worldbank",
+     "error": "Tiempo de espera agotado en https://api.worldbank.org/v2/country/CHL;OED;LCN/indicator/NY.GDP.PCAP.PP.CD?format=json&per_page=2000&date=1990%3A2026"
+    }
+   ],
    "lastDate": "2025-01-01",
    "count": 36
   },

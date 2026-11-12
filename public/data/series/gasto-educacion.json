@@ -2,7 +2,7 @@
  "id": "gasto-educacion",
  "source": "worldbank",
  "code": "SE.XPD.TOTL.GD.ZS",
- "fetchedAt": "2026-11-11T18:42:49.249Z",
+ "fetchedAt": "2026-11-12T04:26:17.628Z",
  "compare": {
   "OED": [
    ["1990-01-01",4.5779550075531],

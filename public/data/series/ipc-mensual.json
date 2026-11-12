@@ -2,7 +2,7 @@
  "id": "ipc-mensual",
  "source": "bcch",
  "code": "F074.IPC.VAR.Z.Z.C.M",
- "fetchedAt": "2026-11-11T18:42:35.064Z",
+ "fetchedAt": "2026-11-12T04:23:03.952Z",
  "observations": [
   ["2000-01-01",0.2],
   ["2000-02-01",0.6],
