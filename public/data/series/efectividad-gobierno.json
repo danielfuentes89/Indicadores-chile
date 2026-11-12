@@ -2,7 +2,7 @@
  "id": "efectividad-gobierno",
  "source": "worldbank",
  "code": "GOV_WGI_GE.EST",
- "fetchedAt": "2026-11-12T04:26:16.866Z",
+ "fetchedAt": "2026-11-12T19:05:15.831Z",
  "observations": [
   ["1996-01-01",1.0134214],
   ["1998-01-01",0.9237448],
