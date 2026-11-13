@@ -1,22 +1,22 @@
 {
- "generatedAt": "2026-11-12T19:11:49.670Z",
- "today": "2026-11-12",
+ "generatedAt": "2026-11-13T03:39:27.106Z",
+ "today": "2026-11-13",
  "results": [
   {
    "id": "dolar-observado",
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-12",
-   "count": 6695
+   "lastDate": "2026-11-13",
+   "count": 6696
   },
   {
    "id": "euro",
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-12",
-   "count": 6695
+   "lastDate": "2026-11-13",
+   "count": 6696
   },
   {
    "id": "uf",
@@ -39,8 +39,8 @@
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-12",
-   "count": 6695
+   "lastDate": "2026-11-13",
+   "count": 6696
   },
   {
    "id": "ipc-anual",
@@ -103,8 +103,8 @@
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-12",
-   "count": 3509
+   "lastDate": "2026-11-13",
+   "count": 3510
   },
   {
    "id": "litio",
@@ -119,8 +119,8 @@
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-03",
-   "count": 6566
+   "lastDate": "2026-11-11",
+   "count": 6572
   },
   {
    "id": "balanza-comercial",
@@ -188,14 +188,9 @@
   },
   {
    "id": "control-corrupcion",
-   "ok": false,
+   "ok": true,
    "source": "worldbank",
-   "attempts": [
-    {
-     "source": "worldbank",
-     "error": "Tiempo de espera agotado en https://api.worldbank.org/v2/country/CHL/indicator/GOV_WGI_CC.EST?format=json&per_page=2000&date=1996%3A2026&source=3"
-    }
-   ],
+   "attempts": [],
    "lastDate": "2025-01-01",
    "count": 27
   },
