@@ -2,7 +2,7 @@
  "id": "expectativa-inflacion",
  "source": "bcch",
  "code": "F089.IPC.V12.14.M",
- "fetchedAt": "2026-11-14T03:38:26.694Z",
+ "fetchedAt": "2026-11-14T17:08:10.108Z",
  "observations": [
   ["2010-01-01",2.5],
   ["2010-02-01",2.6],

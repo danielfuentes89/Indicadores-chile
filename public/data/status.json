@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-14T03:38:33.371Z",
+ "generatedAt": "2026-11-14T17:11:23.352Z",
  "today": "2026-11-14",
  "results": [
   {
@@ -188,9 +188,14 @@
   },
   {
    "id": "control-corrupcion",
-   "ok": true,
+   "ok": false,
    "source": "worldbank",
-   "attempts": [],
+   "attempts": [
+    {
+     "source": "worldbank",
+     "error": "Tiempo de espera agotado en https://api.worldbank.org/v2/country/CHL/indicator/GOV_WGI_CC.EST?format=json&per_page=2000&date=1996%3A2026&source=3"
+    }
+   ],
    "lastDate": "2025-01-01",
    "count": 27
   },

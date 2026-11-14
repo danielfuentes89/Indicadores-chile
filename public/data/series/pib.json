@@ -3,7 +3,7 @@
  "source": "bcch",
  "code": "F032.PIB.FLU.R.CLP.EP18.Z.Z.0.T",
  "derive": "yoy",
- "fetchedAt": "2026-11-14T03:38:27.858Z",
+ "fetchedAt": "2026-11-14T17:08:10.866Z",
  "observations": [
   ["1997-01-01",5.60843],
   ["1997-04-01",6.80967],
