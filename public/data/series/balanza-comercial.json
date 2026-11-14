@@ -2,7 +2,7 @@
  "id": "balanza-comercial",
  "source": "bcch",
  "code": "F068.B1.VAR.T0.0.S.N.Z.Z.Z.Z.6.0.M",
- "fetchedAt": "2026-11-13T18:32:07.481Z",
+ "fetchedAt": "2026-11-14T03:38:29.095Z",
  "observations": [
   ["2003-01-01",121.860101754762],
   ["2003-02-01",321.155428589769],

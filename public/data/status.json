@@ -1,22 +1,22 @@
 {
- "generatedAt": "2026-11-13T18:38:25.525Z",
- "today": "2026-11-13",
+ "generatedAt": "2026-11-14T03:38:33.371Z",
+ "today": "2026-11-14",
  "results": [
   {
    "id": "dolar-observado",
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-13",
-   "count": 6696
+   "lastDate": "2026-11-16",
+   "count": 6697
   },
   {
    "id": "euro",
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-13",
-   "count": 6696
+   "lastDate": "2026-11-16",
+   "count": 6697
   },
   {
    "id": "uf",
@@ -39,8 +39,8 @@
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-13",
-   "count": 6696
+   "lastDate": "2026-11-16",
+   "count": 6697
   },
   {
    "id": "ipc-anual",
@@ -103,8 +103,8 @@
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-13",
-   "count": 3510
+   "lastDate": "2026-11-16",
+   "count": 3511
   },
   {
    "id": "litio",
