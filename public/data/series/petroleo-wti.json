@@ -2,7 +2,7 @@
  "id": "petroleo-wti",
  "source": "bcch",
  "code": "F019.PPB.PRE.41B.D",
- "fetchedAt": "2026-11-14T17:08:11.955Z",
+ "fetchedAt": "2026-11-15T03:09:13.536Z",
  "observations": [
   ["2000-01-04",25.56],
   ["2000-01-05",24.65],
