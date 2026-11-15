@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-15T03:23:37.558Z",
+ "generatedAt": "2026-11-15T17:42:55.179Z",
  "today": "2026-11-15",
  "results": [
   {
@@ -132,14 +132,9 @@
   },
   {
    "id": "pib-per-capita-ppa",
-   "ok": false,
+   "ok": true,
    "source": "worldbank",
-   "attempts": [
-    {
-     "source": "worldbank",
-     "error": "Tiempo de espera agotado en https://api.worldbank.org/v2/country/CHL;OED;LCN/indicator/NY.GDP.PCAP.PP.CD?format=json&per_page=2000&date=1990%3A2026"
-    }
-   ],
+   "attempts": [],
    "lastDate": "2025-01-01",
    "count": 36
   },
@@ -209,14 +204,9 @@
   },
   {
    "id": "efectividad-gobierno",
-   "ok": false,
+   "ok": true,
    "source": "worldbank",
-   "attempts": [
-    {
-     "source": "worldbank",
-     "error": "Tiempo de espera agotado en https://api.worldbank.org/v2/country/CHL/indicator/GOV_WGI_GE.EST?format=json&per_page=2000&date=1996%3A2026&source=3"
-    }
-   ],
+   "attempts": [],
    "lastDate": "2025-01-01",
    "count": 27
   },
