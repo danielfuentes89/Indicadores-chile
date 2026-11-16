@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-16T03:30:35.378Z",
+ "generatedAt": "2026-11-16T21:03:51.768Z",
  "today": "2026-11-16",
  "results": [
   {
@@ -7,8 +7,8 @@
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-16",
-   "count": 6697
+   "lastDate": "2026-11-17",
+   "count": 6698
   },
   {
    "id": "euro",
@@ -103,8 +103,8 @@
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-16",
-   "count": 3511
+   "lastDate": "2026-11-17",
+   "count": 3512
   },
   {
    "id": "litio",
