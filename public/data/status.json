@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-18T04:45:22.270Z",
+ "generatedAt": "2026-11-18T19:25:33.123Z",
  "today": "2026-11-18",
  "results": [
   {
@@ -87,8 +87,8 @@
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-04-01",
-   "count": 118
+   "lastDate": "2026-07-01",
+   "count": 119
   },
   {
    "id": "desempleo",
@@ -103,8 +103,8 @@
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-18",
-   "count": 3513
+   "lastDate": "2026-11-19",
+   "count": 3514
   },
   {
    "id": "litio",

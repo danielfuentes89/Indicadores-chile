@@ -2,7 +2,7 @@
  "id": "crecimiento-fmi",
  "source": "imf",
  "code": "NGDP_RPCH",
- "fetchedAt": "2026-11-18T04:45:18.599Z",
+ "fetchedAt": "2026-11-18T19:24:52.032Z",
  "projectionFrom": "2027",
  "compare": {
   "WEOWORLD": [
