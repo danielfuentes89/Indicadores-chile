@@ -2,7 +2,7 @@
  "id": "gasto-id",
  "source": "worldbank",
  "code": "GB.XPD.RSDV.GD.ZS",
- "fetchedAt": "2026-11-17T19:54:56.019Z",
+ "fetchedAt": "2026-11-18T04:45:21.535Z",
  "compare": {
   "OED": [
    ["1996-01-01",2.10526548293269],
