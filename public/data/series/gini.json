@@ -2,7 +2,7 @@
  "id": "gini",
  "source": "worldbank",
  "code": "SI.POV.GINI",
- "fetchedAt": "2026-11-19T04:35:12.275Z",
+ "fetchedAt": "2026-11-19T19:30:20.290Z",
  "observations": [
   ["1987-01-01",56.2],
   ["1990-01-01",57.2],
