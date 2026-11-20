@@ -2,7 +2,7 @@
  "id": "tpm",
  "source": "bcch",
  "code": "F022.TPM.TIN.D001.NO.Z.D",
- "fetchedAt": "2026-11-20T04:22:58.774Z",
+ "fetchedAt": "2026-11-20T19:06:13.697Z",
  "observations": [
   ["2000-01-03",5],
   ["2000-01-04",5],
