@@ -1,22 +1,22 @@
 {
- "generatedAt": "2026-11-19T19:31:29.718Z",
- "today": "2026-11-19",
+ "generatedAt": "2026-11-20T04:23:06.072Z",
+ "today": "2026-11-20",
  "results": [
   {
    "id": "dolar-observado",
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-19",
-   "count": 6700
+   "lastDate": "2026-11-20",
+   "count": 6701
   },
   {
    "id": "euro",
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-19",
-   "count": 6700
+   "lastDate": "2026-11-20",
+   "count": 6701
   },
   {
    "id": "uf",
@@ -39,8 +39,8 @@
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-19",
-   "count": 6700
+   "lastDate": "2026-11-20",
+   "count": 6701
   },
   {
    "id": "ipc-anual",
@@ -103,8 +103,8 @@
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-19",
-   "count": 3514
+   "lastDate": "2026-11-20",
+   "count": 3515
   },
   {
    "id": "litio",
@@ -119,8 +119,8 @@
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-11",
-   "count": 6572
+   "lastDate": "2026-11-17",
+   "count": 6576
   },
   {
    "id": "balanza-comercial",
@@ -140,33 +140,53 @@
   },
   {
    "id": "crecimiento-fmi",
-   "ok": true,
+   "ok": false,
    "source": "imf",
-   "attempts": [],
+   "attempts": [
+    {
+     "source": "imf",
+     "error": "HTTP 404 en https://www.imf.org/external/datamapper/api/v1/NGDP_RPCH: { \"error\":\"Blob not found\" }"
+    }
+   ],
    "lastDate": "2031-01-01",
    "count": 42
   },
   {
    "id": "inflacion-fmi",
-   "ok": true,
+   "ok": false,
    "source": "imf",
-   "attempts": [],
+   "attempts": [
+    {
+     "source": "imf",
+     "error": "HTTP 404 en https://www.imf.org/external/datamapper/api/v1/PCPIPCH: { \"error\":\"Blob not found\" }"
+    }
+   ],
    "lastDate": "2031-01-01",
    "count": 42
   },
   {
    "id": "desempleo-fmi",
-   "ok": true,
+   "ok": false,
    "source": "imf",
-   "attempts": [],
+   "attempts": [
+    {
+     "source": "imf",
+     "error": "HTTP 404 en https://www.imf.org/external/datamapper/api/v1/LUR: { \"error\":\"Blob not found\" }"
+    }
+   ],
    "lastDate": "2031-01-01",
    "count": 42
   },
   {
    "id": "deuda-publica",
-   "ok": true,
+   "ok": false,
    "source": "imf",
-   "attempts": [],
+   "attempts": [
+    {
+     "source": "imf",
+     "error": "HTTP 404 en https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP: { \"error\":\"Blob not found\" }"
+    }
+   ],
    "lastDate": "2031-01-01",
    "count": 41
   },

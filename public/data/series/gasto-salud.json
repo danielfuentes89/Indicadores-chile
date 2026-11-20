@@ -2,7 +2,7 @@
  "id": "gasto-salud",
  "source": "worldbank",
  "code": "SH.XPD.CHEX.GD.ZS",
- "fetchedAt": "2026-11-19T19:31:28.478Z",
+ "fetchedAt": "2026-11-20T04:23:05.801Z",
  "compare": {
   "OED": [
    ["2000-01-01",9.31221860377691],
