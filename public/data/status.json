@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-22T03:32:00.473Z",
+ "generatedAt": "2026-11-22T18:30:51.333Z",
  "today": "2026-11-22",
  "results": [
   {
@@ -140,53 +140,33 @@
   },
   {
    "id": "crecimiento-fmi",
-   "ok": false,
+   "ok": true,
    "source": "imf",
-   "attempts": [
-    {
-     "source": "imf",
-     "error": "HTTP 404 en https://www.imf.org/external/datamapper/api/v1/NGDP_RPCH: { \"error\":\"Blob not found\" }"
-    }
-   ],
+   "attempts": [],
    "lastDate": "2031-01-01",
    "count": 42
   },
   {
    "id": "inflacion-fmi",
-   "ok": false,
+   "ok": true,
    "source": "imf",
-   "attempts": [
-    {
-     "source": "imf",
-     "error": "HTTP 404 en https://www.imf.org/external/datamapper/api/v1/PCPIPCH: { \"error\":\"Blob not found\" }"
-    }
-   ],
+   "attempts": [],
    "lastDate": "2031-01-01",
    "count": 42
   },
   {
    "id": "desempleo-fmi",
-   "ok": false,
+   "ok": true,
    "source": "imf",
-   "attempts": [
-    {
-     "source": "imf",
-     "error": "HTTP 404 en https://www.imf.org/external/datamapper/api/v1/LUR: { \"error\":\"Blob not found\" }"
-    }
-   ],
+   "attempts": [],
    "lastDate": "2031-01-01",
    "count": 42
   },
   {
    "id": "deuda-publica",
-   "ok": false,
+   "ok": true,
    "source": "imf",
-   "attempts": [
-    {
-     "source": "imf",
-     "error": "HTTP 404 en https://www.imf.org/external/datamapper/api/v1/GGXWDG_NGDP: { \"error\":\"Blob not found\" }"
-    }
-   ],
+   "attempts": [],
    "lastDate": "2031-01-01",
    "count": 41
   },

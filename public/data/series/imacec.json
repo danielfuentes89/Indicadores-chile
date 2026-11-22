@@ -3,7 +3,7 @@
  "source": "bcch",
  "code": "F032.IMC.IND.Z.Z.EP18.Z.Z.0.M",
  "derive": "yoy",
- "fetchedAt": "2026-11-22T03:31:54.359Z",
+ "fetchedAt": "2026-11-22T18:30:44.802Z",
  "observations": [
   ["2001-01-01",2.242561],
   ["2001-02-01",3.370276],
