@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-23T04:04:18.149Z",
+ "generatedAt": "2026-11-23T22:39:26.668Z",
  "today": "2026-11-23",
  "results": [
   {
@@ -7,16 +7,16 @@
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-23",
-   "count": 6702
+   "lastDate": "2026-11-24",
+   "count": 6703
   },
   {
    "id": "euro",
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-23",
-   "count": 6702
+   "lastDate": "2026-11-24",
+   "count": 6703
   },
   {
    "id": "uf",
@@ -39,8 +39,8 @@
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-23",
-   "count": 6702
+   "lastDate": "2026-11-24",
+   "count": 6703
   },
   {
    "id": "ipc-anual",
@@ -103,8 +103,8 @@
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-23",
-   "count": 3516
+   "lastDate": "2026-11-24",
+   "count": 3517
   },
   {
    "id": "litio",
