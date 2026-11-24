@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-24T07:08:05.790Z",
+ "generatedAt": "2026-11-24T21:11:50.363Z",
  "today": "2026-11-24",
  "results": [
   {
@@ -7,16 +7,16 @@
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-24",
-   "count": 6703
+   "lastDate": "2026-11-25",
+   "count": 6704
   },
   {
    "id": "euro",
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-24",
-   "count": 6703
+   "lastDate": "2026-11-25",
+   "count": 6704
   },
   {
    "id": "uf",
@@ -103,16 +103,16 @@
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-24",
-   "count": 3517
+   "lastDate": "2026-11-25",
+   "count": 3518
   },
   {
    "id": "litio",
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-17",
-   "count": 2011
+   "lastDate": "2026-11-24",
+   "count": 2016
   },
   {
    "id": "petroleo-wti",
