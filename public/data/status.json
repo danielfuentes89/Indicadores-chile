@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-25T05:42:43.132Z",
+ "generatedAt": "2026-11-25T20:29:09.831Z",
  "today": "2026-11-25",
  "results": [
   {
@@ -103,8 +103,8 @@
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-25",
-   "count": 3518
+   "lastDate": "2026-11-26",
+   "count": 3519
   },
   {
    "id": "litio",
