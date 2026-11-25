@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-11-24T21:11:50.363Z",
- "today": "2026-11-24",
+ "generatedAt": "2026-11-25T05:42:43.132Z",
+ "today": "2026-11-25",
  "results": [
   {
    "id": "dolar-observado",
@@ -39,8 +39,8 @@
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-24",
-   "count": 6703
+   "lastDate": "2026-11-25",
+   "count": 6704
   },
   {
    "id": "ipc-anual",
