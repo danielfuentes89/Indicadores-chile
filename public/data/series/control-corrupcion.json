@@ -2,7 +2,7 @@
  "id": "control-corrupcion",
  "source": "worldbank",
  "code": "GOV_WGI_CC.EST",
- "fetchedAt": "2026-11-25T20:29:08.082Z",
+ "fetchedAt": "2026-11-26T05:30:27.924Z",
  "observations": [
   ["1996-01-01",1.58943],
   ["1998-01-01",1.3735381],
