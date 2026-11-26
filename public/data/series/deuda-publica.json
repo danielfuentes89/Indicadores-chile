@@ -2,7 +2,7 @@
  "id": "deuda-publica",
  "source": "imf",
  "code": "GGXWDG_NGDP",
- "fetchedAt": "2026-11-26T05:30:27.333Z",
+ "fetchedAt": "2026-11-26T20:11:00.052Z",
  "projectionFrom": "2027",
  "compare": {
   "ADVEC": [

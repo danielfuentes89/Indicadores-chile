@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-26T05:30:29.742Z",
+ "generatedAt": "2026-11-26T20:11:02.779Z",
  "today": "2026-11-26",
  "results": [
   {
@@ -103,8 +103,8 @@
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-26",
-   "count": 3519
+   "lastDate": "2026-11-27",
+   "count": 3520
   },
   {
    "id": "litio",
@@ -119,8 +119,8 @@
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-17",
-   "count": 6576
+   "lastDate": "2026-11-24",
+   "count": 6581
   },
   {
    "id": "balanza-comercial",
