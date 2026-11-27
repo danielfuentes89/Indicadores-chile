@@ -1,22 +1,22 @@
 {
- "generatedAt": "2026-11-26T20:11:02.779Z",
- "today": "2026-11-26",
+ "generatedAt": "2026-11-27T05:26:20.579Z",
+ "today": "2026-11-27",
  "results": [
   {
    "id": "dolar-observado",
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-26",
-   "count": 6705
+   "lastDate": "2026-11-27",
+   "count": 6706
   },
   {
    "id": "euro",
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-26",
-   "count": 6705
+   "lastDate": "2026-11-27",
+   "count": 6706
   },
   {
    "id": "uf",
@@ -39,8 +39,8 @@
    "ok": true,
    "source": "bcch",
    "attempts": [],
-   "lastDate": "2026-11-26",
-   "count": 6705
+   "lastDate": "2026-11-27",
+   "count": 6706
   },
   {
    "id": "ipc-anual",
